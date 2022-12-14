@@ -10,6 +10,7 @@
 
 - tailwindcss
 - storybook
+- CRACO && Alias (github.com/oklas/react-app-alias)
 
 ## Beckend
 
