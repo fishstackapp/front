@@ -1,4 +1,4 @@
-# Welcome
+# 🍕 PizzaStack
 
 ## Front
 
@@ -6,13 +6,11 @@
 - Typescript
 - GraphQL
 
+### libary
+
+- tailwindcss
+
 ## Beckend
 
 - Hasura
 - Nodejs
-
-- TS
-- React Router
-- Styled-components // styled-system
-- Firebase // react-firebase-hooks
-- Formik // yup
