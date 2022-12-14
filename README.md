@@ -1,4 +1,4 @@
-# 🍕 PizzaStack
+# 🐟 FishStack
 
 ## Front
 
@@ -11,6 +11,7 @@
 - tailwindcss
 - storybook
 - CRACO && Alias (github.com/oklas/react-app-alias)
+- npm i tsconfig-paths-webpack-plugin -D
 
 ## Beckend
 
