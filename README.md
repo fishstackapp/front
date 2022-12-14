@@ -9,6 +9,7 @@
 ### libary
 
 - tailwindcss
+- storybook
 
 ## Beckend
 
