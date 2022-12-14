@@ -1,10 +1,15 @@
-import fishMenu from '@app/db/fish.json';
+import { FC } from 'react';
 import { MenuItem } from '@app/modules/menu/components/menu-item/menu-item.component';
+import { Fish } from '../../types/fish';
 
-export const MenuList = () => {
+interface MenuListProps {
+  items: Fish[];
+}
+
+export const MenuList: FC<MenuListProps> = ({ items }) => {
   return (
     <div className="flex flex-wrap gap-10">
-      {fishMenu.map(({ image, id, ...fish }) => (
+      {items.map(({ image, id, ...fish }) => (
         <MenuItem key={id} {...fish} imagePath={image} />
       ))}
     </div>
