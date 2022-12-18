@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "manhattan.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -9,7 +9,7 @@
   },
   {
     "id": 2,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "pepperoni-w-tomatoes.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "ham-w-mushrooms.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "texas.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "pepperoni.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "margarita.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "barbecue.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "grill-mix.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
@@ -65,7 +65,7 @@
   },
   {
     "id": 9,
-    "image": "https://cdn.pixabay.com/photo/2022/05/09/10/57/roach-7184301_960_720.jpg",
+    "image": "carbonara.jpeg",
     "weight": 555,
     "title": "Плотва",
     "descriptions": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.",
