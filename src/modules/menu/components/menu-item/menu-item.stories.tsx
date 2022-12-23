@@ -11,7 +11,7 @@ const Template: ComponentStory<typeof MenuItem> = args => <MenuItem {...args} />
 export const View = Template.bind({});
 
 View.args = {
-  imagePath: '/assets/fish/plotva.jpg',
+  imagePath: 'public/assets/pizza/barbecue.jpeg',
   title: 'Плотва',
   weight: 1000,
   descriptions: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, ipsa.',
