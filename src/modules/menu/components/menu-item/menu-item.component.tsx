@@ -1,30 +1,45 @@
 import { FC } from 'react';
+import clsx from 'clsx';
+import { cloudinary } from "@app/core/cloudinary";
+import { AdvancedImage } from "@cloudinary/react";
 
 interface MenuItemProps {
-  imagePath: string;
+  image: string;
   title: string;
   weight: number;
   descriptions: string;
   price: number;
 }
 
-export const MenuItem: FC<MenuItemProps> = ({ imagePath, weight, title, descriptions, price }) => {
+export const MenuItem: FC<MenuItemProps> = ({ image, weight, title, descriptions, price }) => {
+  const imageCld = cloudinary.image(image);
+  imageCld.addTransformation('w_384,h_240,dpr_2.0');
+
+  const titleClasses = clsx('text-lg sm:text-xl font-semibold', {
+    'mb-2': descriptions,
+    'mb-8': !descriptions,
+  });
+
   return (
-    <div className="w-96 shadow-xl rounded-2xl border-1 bg-white">
+    <div className="w-72 lg:w-96 shadow-xl rounded-2xl bg-white flex flex-col">
       <div className="relative">
-        <img
-          className="object-cover object-center w-full h-[15rem] rounded-t-2xl"
-          src={imagePath}
-          alt={title}
-        />
-        <span className="absolute bottom-1.5 right-3 bg-gray-900/50 text-white text-sm px-2 rounded-[2rem]">
-          {weight} г
-        </span>
+        <AdvancedImage cldImg={imageCld} width={384} height={240} className="rounded-t-2xl"/>
+        {weight && (
+          <span className="absolute bottom-1.5 right-3 bg-gray-900/50 text-white text-sm px-2 rounded-[2rem]">
+            {weight} г
+          </span>
+        )}
       </div>
-      <div className="p-8">
-        <h2 className="text-xl font-semibold mb-2">{title}</h2>
-        <p className="mb-8">{descriptions}</p>
-        <span className="text-xl font-semibold">{price} грн.</span>
+      <div className="p-4 sm:p-8 flex flex-col justify-between h-[calc(100%_-_15rem)] flex-1">
+        <div>
+          <h2 className={titleClasses}>{title}</h2>
+          {descriptions && (
+            <p className="mb-4 sm:mb-8 text-sm sm:text-base">{descriptions}</p>
+          )}
+        </div>
+        <div className="flex justify-between items-center flex-col gap-3 sm:flex-row">
+          <span className="text-xl font-semibold">{price} грн.</span>
+        </div>
       </div>
     </div>
   );

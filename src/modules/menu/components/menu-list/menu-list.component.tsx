@@ -10,7 +10,7 @@ export const MenuList: FC<MenuListProps> = ({ items }) => {
   return (
     <div className="flex flex-wrap gap-10 grid-cols-3 justify-center">
       {items.map(({ image, id, ...fish }) => (
-        <MenuItem key={id} {...fish} imagePath={'/assets/pizza/' + image} />
+        <MenuItem key={id} {...fish} image={image} />
       ))}
     </div>
   );
