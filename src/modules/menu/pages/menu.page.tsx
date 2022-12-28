@@ -1,10 +1,11 @@
 import { ShowInfo } from "@app/common/components/show-info/show-info.component"
-import { useGetMenuQuery } from "@app/core/types"
+import { useGetMenuQuery, useGetSettingQuery } from "@app/core/types"
+import { MenuCategory } from "../components/menu-category/menu-category.component"
 import { MenuListLoading } from "../components/menu-list-loading/menu-item-list-loading.component"
-import { MenuList } from "../components/menu-list/menu-list.component"
 
 export const MenuPage = () => {
-  const {data, loading, error} = useGetMenuQuery()
+  const {data, loading, error} = useGetMenuQuery();
+  const {loading: loadingSetting} = useGetSettingQuery();
 
   if(error) {
     return (
@@ -15,19 +16,23 @@ export const MenuPage = () => {
     )
   }
 
-  if(loading){
+  if(loading || loadingSetting){
     return <MenuListLoading items={9}/>
   }
 
   if(!data){
     return (
       <ShowInfo type={"info"}>
-        <p>Нажаль сталася помилка 😕</p>
+        <p>Нажаль, меню пусте 😕</p>
       </ShowInfo>
     )
   }
 
   return (
-    <MenuList items={data.menu}/>
+    <div className="flex flex-col gap-12">
+      {data.categories.map((category) => (
+        <MenuCategory data={category} key={`menu-page-${category.id}`}/>
+      ))}
+    </div>
   )
 }

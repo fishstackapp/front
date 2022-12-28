@@ -6,14 +6,28 @@ import { AdvancedImage } from "@cloudinary/react";
 interface MenuItemProps {
   image: string;
   title: string;
-  weight: number;
-  descriptions: string;
+  weight?: number;
+  descriptions?: string | null;
   price: number;
+  fitImage?: boolean;
 }
 
-export const MenuItem: FC<MenuItemProps> = ({ image, weight, title, descriptions, price }) => {
+export const MenuItem: FC<MenuItemProps> = ({ 
+  image, 
+  weight, 
+  title, 
+  descriptions, 
+  price,
+  fitImage = false,
+}) => {
   const imageCld = cloudinary.image(image);
-  imageCld.addTransformation('w_384,h_240,dpr_2.0');
+
+  const transformation = ["w_384","h_240","dpr_2.0"]
+  if(fitImage) {
+    transformation.unshift('c_pad')
+  }
+
+  imageCld.addTransformation(transformation.join(','));
 
   const titleClasses = clsx('text-lg sm:text-xl font-semibold', {
     'mb-2': descriptions,
