@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Button } from '@app/common/components/button/button.component copy';
+import { Button } from '@app/common/components/button/button.component';
 import { Input } from '@app/common/components/input/input.component';
 import { Counter } from '@app/common/components/counter/counter.component';
 import { phoneRegexp } from '@app/common/utils/regex';
@@ -23,7 +23,11 @@ type LoginFormStapKeys = keyof typeof LoginFormStep;
 
 const generateValidationSchema = (step: LoginFormStapKeys) => {
   const baseValidation = {
-    phoneNumber: yup.string().trim().matches(phoneRegexp, 'Введіть коректний номер телефону').required('Введіть номер телефону'),
+    phoneNumber: yup
+      .string()
+      .trim()
+      .matches(phoneRegexp, 'Введіть коректний номер телефону')
+      .required('Введіть номер телефону'),
   };
 
   if (step === LoginFormStep.first) {
@@ -97,7 +101,7 @@ export const LoginForm: FC<LoginFormProps> = () => {
           </div>
           {step === LoginFormStep.second && (
             <div>
-              <Counter onRestart={() => console.log('qwe')}>Відправити код ще раз</Counter>
+              <Counter onRestart={() => console.log('123')}>Відправити код ще раз</Counter>
             </div>
           )}
         </div>

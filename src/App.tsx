@@ -8,7 +8,7 @@ export const App = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header isLoading={loading} categories={data?.categories}/>
+      <Header isLoading={loading} categories={data?.categories} />
       <div className="mx-12 mb-24 mt-24">
         <MenuPage />
       </div>
