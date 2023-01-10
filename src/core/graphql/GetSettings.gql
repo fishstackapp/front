@@ -1,5 +1,5 @@
 query GetSetting {
   settings {
-    snacks_categoty
+    snacks_category
   }
 }

@@ -2,19 +2,24 @@ import { FC, PropsWithChildren, useEffect, useRef, useState } from 'react';
 
 interface CounterProps {
   onRestart: () => void;
+  intervalTime?: number;
 }
 
-export const Counter: FC<PropsWithChildren<CounterProps>> = ({ children, onRestart }) => {
-  const [counter, setCounter] = useState(60);
+export const Counter: FC<PropsWithChildren<CounterProps>> = ({
+  children,
+  onRestart,
+  intervalTime = 60,
+}) => {
+  const [counter, setCounter] = useState(intervalTime);
   const [disabled, setDisabled] = useState(false);
 
   const counterRef = useRef<NodeJS.Timer>();
 
   const startCounter = (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    if(event) {
+    if (event) {
       onRestart();
     }
-    setCounter(60);
+    setCounter(intervalTime);
     setDisabled(true);
     counterRef.current = setInterval(() => {
       setCounter(counter => counter - 1);
