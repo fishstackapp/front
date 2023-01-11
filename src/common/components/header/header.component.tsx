@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { HeaderCategoryLink } from '../link/link.component';
 import { useReactiveVar } from '@apollo/client';
 import { isLoginReactive } from '@app/modules/auth/store/reactive-vars';
+import { ReactComponent as ShoppingCartSolidIcon } from '@app/assets/icons/shopping-cart-solid.svg';
 
 interface HeaderProps {
   isLoading?: boolean;
@@ -51,7 +52,10 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
           </>
         )}
       </div>
-      <div>
+      <div className='flex items-center gap-3'>
+      <button>
+        <ShoppingCartSolidIcon className='w-6 h-6 child-path:fill-gray-900' />
+      </button>
         {isLogin ? (
           <UserDropdown />
         ) : (

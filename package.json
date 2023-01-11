@@ -83,6 +83,8 @@
     "@storybook/testing-library": "^0.0.13",
     "@types/react-helmet": "^6.1.6",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "prettier": "^2.8.2",
+    "prettier-plugin-tailwindcss": "^0.2.1",
     "prop-types": "^15.8.1",
     "react-app-alias": "^2.2.2",
     "storybook": "^6.5.14",
