@@ -4,17 +4,20 @@ import clsx from 'clsx';
 import { AdvancedImage } from '@cloudinary/react';
 import { useCloudinaryImage } from '@app/common/hooks/use-cloudinary-image.hooks';
 import { Button } from '@app/common/components/button/button.component';
+import { addItemsToCart } from '@app/modules/cart/store/cart-state';
 
 interface MenuItemProps {
+  fishId: string;
   image: string;
   title: string;
+  price: number;
   weight?: number;
   descriptions?: string | null;
-  price: number;
   fitImage?: boolean;
 }
 
 export const MenuItem: FC<MenuItemProps> = ({
+  fishId,
   image,
   weight,
   title,
@@ -35,6 +38,10 @@ export const MenuItem: FC<MenuItemProps> = ({
     'mb-8': !descriptions,
   });
 
+  const handleAddToCart = () => {
+    addItemsToCart(fishId)
+  }
+
   return (
     <div className="w-96 rounded-2xl bg-white shadow-xl">
       <div className="relative">
@@ -50,7 +57,7 @@ export const MenuItem: FC<MenuItemProps> = ({
         {descriptions && <p className="mb-8">{descriptions}</p>}
         <div className='flex justify-between items-center'>         
         <span className="text-xl font-semibold">{price} грн.</span>
-        <Button>
+        <Button onClick={handleAddToCart}>
           Додати до кошика
         </Button>
         </div>

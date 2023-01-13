@@ -7,11 +7,17 @@ interface MenuListProps {
 }
 
 export const MenuList: FC<MenuListProps> = ({ items }) => {
-  const {data: settings} = useGetSettingQuery({fetchPolicy: "cache-only"})
+  const { data: settings } = useGetSettingQuery({ fetchPolicy: 'cache-only' });
   return (
-    <div className="flex flex-wrap gap-10 grid-cols-3 justify-center">
+    <div className="flex grid-cols-3 flex-wrap justify-center gap-10">
       {items.map(({ image, ...fish }) => (
-        <MenuItem {...fish} image={image} key={`fish-${fish.id}`} fitImage={fish.category_id === settings?.settings[0].snacks_category}/>
+        <MenuItem
+          {...fish}
+          fishId={fish.id}
+          image={image}
+          key={`fish-${fish.id}`}
+          fitImage={fish.category_id === settings?.settings[0].snacks_category}
+        />
       ))}
     </div>
   );

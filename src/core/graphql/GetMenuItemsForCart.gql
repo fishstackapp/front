@@ -1,0 +1,8 @@
+query GetMenuItemsForCart($_in: [uuid!]!) {
+  menu(where: {id: {_in: $_in}}) {
+    image
+    title
+    price
+    id
+  }
+}
