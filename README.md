@@ -6,7 +6,7 @@
 - Typescript
 - GraphQL
 
-## Beckend
+## Backend
 
 - Hasura
 - Nodejs

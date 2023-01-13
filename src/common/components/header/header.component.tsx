@@ -8,6 +8,7 @@ import { HeaderCategoryLink } from '../link/link.component';
 import { useReactiveVar } from '@apollo/client';
 import { isLoginReactive } from '@app/modules/auth/store/reactive-vars';
 import { ReactComponent as ShoppingCartSolidIcon } from '@app/assets/icons/shopping-cart-solid.svg';
+import { toggleCart } from '@app/modules/cart/store/cart-opened-state';
 
 interface HeaderProps {
   isLoading?: boolean;
@@ -21,9 +22,9 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
   const isLoginPage = location.pathname === '/login';
 
   return (
-    <div className="h-12 shadow px-6 mb-6 sm:mb-12 fixed w-full z-20 bg-white flex justify-between items-center">
-      <div className="flex items-center h-full gap-3 flex-1">
-        <Link to="/" className="text-lg font-semibold sm:text-xl">
+    <div className="h-12 shadow px-6 mb-12 fixed w-full z-20 bg-white flex justify-between items-center">
+      <div className="flex items-center h-full gap-3">
+        <Link to="/" className="text-xl font-semibold">
           🐟 FishStack
         </Link>
         {isLoading ? (
@@ -53,7 +54,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
         )}
       </div>
       <div className='flex items-center gap-3'>
-      <button>
+      <button onClick={toggleCart}>
         <ShoppingCartSolidIcon className='w-6 h-6 child-path:fill-gray-900' />
       </button>
         {isLogin ? (
