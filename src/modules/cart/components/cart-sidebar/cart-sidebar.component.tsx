@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import { useOnClickOutside } from '@app/common/hooks/use-on-click-outside.hook';
 import { cartState } from '../../store/cart-state';
 import { useGetMenuItemsForCartQuery } from '@app/core/types';
+import { CartItemListLoading } from '../cart-item-list-loading/cart-item-list-loading.component';
 
 interface CartSidebarProps {}
 
@@ -16,7 +17,7 @@ export const CartSidebar: FC<CartSidebarProps> = () => {
   const isOpened = useReactiveVar(cartOpenedState);
   const cartItems = useReactiveVar(cartState);
 
-  const { data, previousData } = useGetMenuItemsForCartQuery({
+  const { data, previousData, loading } = useGetMenuItemsForCartQuery({
     variables: { menuIds: Object.keys(cartItems) },
   });
 
@@ -53,23 +54,27 @@ export const CartSidebar: FC<CartSidebarProps> = () => {
             <span className="text-lg font-medium text-gray-600">Кошик пустий</span>
           </div>
         </div>
+      ) : !data && !previousData && loading ? (
+        <CartItemListLoading amount={4}/>
       ) : (
-        <div className="flex h-[calc(100%_-_3.25rem)] flex-col gap-6">
-          <div className="flex flex-col gap-6 overflow-y-auto">
-            {(data || previousData)?.menu.map(item => (
-              <CartItem
-                {...item}
-                key={`cart-item-${item.id}`}
-                count={cartItems[item.id]}
-                menuItemId={item.id}
-              />
-            ))}
+        (
+          <div className="flex h-[calc(100%_-_3.25rem)] flex-col gap-6">
+            <div className="flex flex-col gap-6 overflow-y-auto">
+              {(data || previousData)?.menu.map(item => (
+                <CartItem
+                  {...item}
+                  key={`cart-item-${item.id}`}
+                  count={cartItems[item.id]}
+                  menuItemId={item.id}
+                />
+              ))}
+            </div>
+            <div className="border-t border-gray-200 pt-6 text-right text-sm font-medium text-gray-900">
+              Усього: {cartSum} грн
+            </div>
+            <Button>Оформити замовлення</Button>
           </div>
-          <div className="border-t border-gray-200 pt-6 text-right text-sm font-medium text-gray-900">
-            Усього: {cartSum} грн
-          </div>
-          <Button>Оформити замовлення</Button>
-        </div>
+        )
       )}
     </div>
   );

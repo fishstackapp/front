@@ -19,7 +19,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputId = useId();
 
     const inputClasses = clsx(
-      'border shadow-sm bg-white rounded-md pl-3 pr-8 py-2 text-sm placeholder-gray-400 mb-2 outline-none transition-all',
+      'border shadow-sm bg-white rounded-md pl-3 pr-8 py-2 text-sm placeholder-gray-400 mb-2 outline-none transition-all disabled:bg-gray-50 disabled:text-gray-500 disabled-cursor-not-allowed',
       {
         'border-gray-300': !error,
         'border-red-300 text-red-900 focus:border-red-500': error,
@@ -33,13 +33,13 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <div>
-        <label htmlFor={inputId} className="block text-sm font-medium text-gray-900 mb-1">
+        <label htmlFor={inputId} className="mb-1 block text-sm font-medium text-gray-900">
           {label}
         </label>
         <div className={inputWrapperClasses}>
           <input id={inputId} className={inputClasses} ref={ref} {...props} />
           {error && (
-            <ExclamationCircleSolid className="h-4 w-4 absolute right-3 top-2.75 child-path:fill-red-500" />
+            <ExclamationCircleSolid className="absolute right-3 top-2.75 h-4 w-4 child-path:fill-red-500" />
           )}
         </div>
         <span

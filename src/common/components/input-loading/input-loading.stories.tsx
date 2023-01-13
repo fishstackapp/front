@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { InputLoading } from './input-loading.component';
 
 export default {
-  title: 'Common/Input Loading',
+  title: 'Common/Input loading',
   component: InputLoading,
 } as ComponentMeta<typeof InputLoading>;
 

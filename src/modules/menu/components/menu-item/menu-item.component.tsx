@@ -39,8 +39,8 @@ export const MenuItem: FC<MenuItemProps> = ({
   });
 
   const handleAddToCart = () => {
-    addItemsToCart(fishId)
-  }
+    addItemsToCart(fishId);
+  };
 
   return (
     <div className="w-96 rounded-2xl bg-white shadow-xl">
@@ -52,14 +52,14 @@ export const MenuItem: FC<MenuItemProps> = ({
           </span>
         )}
       </div>
-      <div className="p-8">
-        <h2 className={titleClasses}>{title}</h2>
-        {descriptions && <p className="mb-8">{descriptions}</p>}
-        <div className='flex justify-between items-center'>         
-        <span className="text-xl font-semibold">{price} грн.</span>
-        <Button onClick={handleAddToCart}>
-          Додати до кошика
-        </Button>
+      <div className="flex flex-col justify-between p-8 h-[calc(100%_-_15rem)]">
+        <div>
+          <h2 className={titleClasses}>{title}</h2>
+          {descriptions && <p className="mb-8">{descriptions}</p>}
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-xl font-semibold">{price} грн.</span>
+          <Button onClick={handleAddToCart}>Додати до кошика</Button>
         </div>
       </div>
     </div>
