@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { CartItems } from './cart-items.component';
+import { CartItem } from './cart-item.component';
 
 export default {
   title: 'Cart/Cart items',
-  component: CartItems,
-} as ComponentMeta<typeof CartItems>;
+  component: CartItem,
+} as ComponentMeta<typeof CartItem>;
 
-const Template: ComponentStory<typeof CartItems> = args => (
-  <CartItems {...args}/>
+const Template: ComponentStory<typeof CartItem> = args => (
+  <CartItem {...args}/>
 );
 
 export const View = Template.bind({});

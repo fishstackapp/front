@@ -1,5 +1,5 @@
-query GetMenuItemsForCart($_in: [uuid!]!) {
-  menu(where: {id: {_in: $_in}}) {
+query GetMenuItemsForCart($menuIds: [uuid!]!) {
+  menu(where: { id: { _in: $menuIds } }) {
     image
     title
     price

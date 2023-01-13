@@ -19,28 +19,9 @@ export const App = () => {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Header isLoading={loading} categories={data?.categories} />
-      <CartSidebar items={[
-          {
-            image: 'menu/menu-1673478636',
-            title: "Плотва в'ялена",
-            count: 2,
-            price: 154,
-          },
-          {
-            image: 'menu/menu-1673478636',
-            title: "Плотва з ікрою",
-            count: 3,
-            price: 120,
-          },
-          {
-            image: 'menu/menu-1673478636',
-            title: "Плотва в'ялена",
-            count: 1,
-            price: 85,
-          },
-        ]} />
+      <CartSidebar />
       <div className="mx-12 mb-24 mt-24">
         <Routes>
           <Route path="/" element={<MenuPage />} />
