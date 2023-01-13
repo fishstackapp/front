@@ -7,6 +7,7 @@ import { CartItems } from '../cart-items/cart-items.component';
 import { Button } from '@app/common/components/button/button.component';
 import clsx from 'clsx';
 import { useOnClickOutside } from '@app/common/hooks/use-on-click-outside.hook';
+import { cartState } from '../../store/cart-state';
 
 interface CartSidebarProps {
   items: any[];
@@ -14,6 +15,7 @@ interface CartSidebarProps {
 
 export const CartSidebar: FC<CartSidebarProps> = ({ items }) => {
   const isOpened = useReactiveVar(cartOpenedState)
+  const cartItems = useReactiveVar(cartState)
 
   const cartRef = useRef<HTMLDivElement>(null);
   useOnClickOutside(cartRef, () => {
