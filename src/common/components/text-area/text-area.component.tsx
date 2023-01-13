@@ -2,28 +2,28 @@ import clsx from 'clsx';
 import { ComponentProps, forwardRef, useId } from 'react';
 import { ReactComponent as ExclamationCircleSolid } from '@app/assets/icons/exclamation-circle-solid.svg';
 
-interface InputProps {
-  onChange?: ComponentProps<'input'>['onChange'];
-  onBlur?: ComponentProps<'input'>['onBlur'];
-  value?: ComponentProps<'input'>['value'];
-  name?: ComponentProps<'input'>['name'];
-  disabled?: ComponentProps<'input'>['disabled'];
+interface TextAreaProps {
+  onChange?: ComponentProps<'textarea'>['onChange'];
+  onBlur?: ComponentProps<'textarea'>['onBlur'];
+  value?: ComponentProps<'textarea'>['value'];
+  name?: ComponentProps<'textarea'>['name'];
+  disabled?: ComponentProps<'textarea'>['disabled'];
   label: string;
   placeholder: string;
   error?: string;
-  fullWidth: boolean;
+  fullWidth?: boolean;
 }
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   ({ label, error, fullWidth, ...props }, ref) => {
     const inputId = useId();
 
     const inputClasses = clsx(
       'border shadow-sm bg-white rounded-md pl-3 pr-8 py-2 text-sm placeholder-gray-400 mb-2 outline-none transition-all',
-      'disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed',
+      'resize-none disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed',
       {
         'border-gray-300': !error,
-        'border-red-300 text-red-900 focus:border-red-500': error,
+        'text-red-900 border-red-300 focus:border-red-500': error,
         'w-full': fullWidth,
       }
     );
@@ -38,7 +38,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {label}
         </label>
         <div className={inputWrapperClasses}>
-          <input id={inputId} className={inputClasses} ref={ref} {...props} />
+          <textarea id={inputId} className={inputClasses} ref={ref} rows={7} {...props} />
           {error && (
             <ExclamationCircleSolid className="absolute right-3 top-2.75 h-4 w-4 child-path:fill-red-500" />
           )}
