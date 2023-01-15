@@ -20,16 +20,17 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
   const location = useLocation();
   const showCategories = location.pathname === '/';
   const isLoginPage = location.pathname === '/login';
+  const isCheckoutPage = location.pathname === '/checkout';
 
   return (
-    <div className="h-12 shadow px-6 mb-12 fixed w-full z-20 bg-white flex justify-between items-center">
-      <div className="flex items-center h-full gap-3">
+    <div className="fixed z-20 mb-12 flex h-12 w-full items-center justify-between bg-white px-6 shadow">
+      <div className="flex h-full items-center gap-3">
         <Link to="/" className="text-xl font-semibold">
           🐟 FishStack
         </Link>
         {isLoading ? (
           <>
-            <div className="w-px bg-gray-200 h-6" />
+            <div className="h-6 w-px bg-gray-200" />
             <Skeleton width={34} height={19} />
             <Skeleton width={34} height={19} />
             <Skeleton width={34} height={19} />
@@ -39,7 +40,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
           <>
             {showCategories && (
               <>
-                <div className="w-px bg-gray-200 h-6" />
+                <div className="h-6 w-px bg-gray-200" />
                 {categories?.map(category => (
                   <HeaderCategoryLink
                     url={`#${category.slug}`}
@@ -53,10 +54,13 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
           </>
         )}
       </div>
-      <div className='flex items-center gap-3'>
-      <button onClick={toggleCart}>
-        <ShoppingCartSolidIcon className='w-6 h-6 child-path:fill-gray-900' />
-      </button>
+      <div className="flex items-center gap-3">
+        {!isCheckoutPage && (
+          <button onClick={toggleCart} id="shopping-cart-item">
+            <ShoppingCartSolidIcon className="h-6 w-6 child-path:fill-gray-900" />
+          </button>
+        )}
+
         {isLogin ? (
           <UserDropdown />
         ) : (
