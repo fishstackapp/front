@@ -11,7 +11,7 @@ interface InputProps {
   label: string;
   placeholder: string;
   error?: string;
-  fullWidth: boolean;
+  fullWidth?: boolean;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
