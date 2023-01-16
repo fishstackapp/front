@@ -1,13 +1,14 @@
-import { Customers, useGetCustomerDataQuery } from "@app/core/types"
+import { useGetCustomerDataQuery } from '@app/core/types';
+import { FrontCustomer } from '@app/modules/user/types/user';
 
 export const useGetMeDataQuery = () => {
-  const {loading, data} = useGetCustomerDataQuery();
+  const { loading, data } = useGetCustomerDataQuery();
 
-  let modifiedData: Customers | undefined;
+  let modifiedData: FrontCustomer | undefined;
 
-  if(data) {
+  if (data) {
     modifiedData = data.customers[0];
   }
 
-  return {loading, data: modifiedData}
-}
+  return { loading, data: modifiedData };
+};

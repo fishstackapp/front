@@ -52,3 +52,7 @@ export const removeItemFromCart = (id: string) => {
 
   saveCartState(cart);
 };
+
+export const cleanCart = () => {
+  saveCartState({})
+}

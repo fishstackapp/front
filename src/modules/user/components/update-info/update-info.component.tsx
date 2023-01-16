@@ -16,16 +16,15 @@ export const UpdateInfo: FC<UpdateInfoProps> = ({
     initialValues,
     onSubmitCallback
   );
-    useEffect(() => {
-      if(!isUpdating){
-        reset({
-          name: initialValues?.name ?? '',
-          address: initialValues?.address ?? '',
-        })
-      }
-    }, [initialValues, isUpdating])
-    
-  
+
+  useEffect(() => {
+    if (!isUpdating) {
+      reset({
+        name: initialValues?.name ?? '',
+        address: initialValues?.address ?? '',
+      });
+    }
+  }, [initialValues, isUpdating]);
 
   const actionPaperFooter = (
     <ActionPaperFooter>
