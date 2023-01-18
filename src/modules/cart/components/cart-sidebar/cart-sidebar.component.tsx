@@ -7,7 +7,6 @@ import { Button } from '@app/common/components/button/button.component';
 import clsx from 'clsx';
 import { useOnClickOutside } from '@app/common/hooks/use-on-click-outside.hook';
 import { cartState } from '../../store/cart-state';
-import { useGetMenuItemsForCartQuery } from '@app/core/types';
 import { CartList } from '../cart-list/cart-list.component';
 import { Link } from 'react-router-dom';
 

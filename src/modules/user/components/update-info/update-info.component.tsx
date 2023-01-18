@@ -6,11 +6,13 @@ import { ActionPaperFooter } from '@app/common/components/action-paper-footer/ac
 import { ActionPaper } from '@app/common/components/action-paper/action-paper.component';
 import { Button } from '@app/common/components/button/button.component';
 import { Input } from '@app/common/components/input/input.component';
+import { UpdateInfoLoading } from '../update-info-loading/update-info-loading.component';
 
 export const UpdateInfo: FC<UpdateInfoProps> = ({
   initialValues,
   onSubmitCallback,
   isUpdating,
+  isLoading,
 }) => {
   const { onSubmit, isSubmitting, control, reset } = UseUpdateInfoForm(
     initialValues,
@@ -22,6 +24,7 @@ export const UpdateInfo: FC<UpdateInfoProps> = ({
       reset({
         name: initialValues?.name ?? '',
         address: initialValues?.address ?? '',
+        phoneNumber: initialValues?.phone ?? '',
       });
     }
   }, [initialValues, isUpdating]);
@@ -36,7 +39,10 @@ export const UpdateInfo: FC<UpdateInfoProps> = ({
 
   return (
     <ActionPaper title="Персональні дані" footer={actionPaperFooter}>
-      <form className="flex gap-9" onSubmit={onSubmit}>
+      {isLoading ? (
+        <UpdateInfoLoading/>
+      ) : (
+        <form className="flex gap-9" onSubmit={onSubmit}>
         <div className="w-1/2">
           <Controller
             name="phoneNumber"
@@ -82,6 +88,7 @@ export const UpdateInfo: FC<UpdateInfoProps> = ({
           />
         </div>
       </form>
+      )}
     </ActionPaper>
   );
 };
