@@ -35,7 +35,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
 
   return (
     <>
-      <div className="fixed z-20 mb-6 sm:mb-12 flex h-12 w-full items-center justify-between bg-white px-2 shadow sm:px-6">
+      <div className="fixed z-20 mb-6 flex h-12 w-full items-center justify-between bg-white px-2 shadow sm:mb-12 sm:px-6">
         <div className="flex h-full flex-1 items-center gap-3">
           <Link to="/" className="text-s font-semibold sm:text-xl">
             🐟 FishStack
@@ -89,13 +89,13 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
       <div className={mobileMenuClasses}>
         <ul>
           <li>
-            <Link to="/chekout" className="block w-full border-b py-2" onClick={closeMenu}>
-              До корзини
+            <Link to="/login" className="block w-full border-b py-2" onClick={closeMenu}>
+              Війти
             </Link>
           </li>
           <li>
-            <Link to="/login" className="block w-full border-b py-2" onClick={closeMenu}>
-              Війти
+            <Link to="/chekout" className="block w-full border-b py-2" onClick={closeMenu}>
+              До корзини
             </Link>
           </li>
         </ul>

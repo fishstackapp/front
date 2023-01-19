@@ -27,7 +27,7 @@ export const LoginForm: FC<LoginFormProps> = ({ onFirstStepCallback, onSecondSte
   };
 
   return (
-    <div className="w-112 py-8 px-10 bg-white rounded-lg shadow mx-auto">
+    <div className="max-w-112 py-8 px-10 bg-white rounded-lg shadow mx-auto">
       <form onSubmit={onSubmit}>
         <div className="flex flex-col gap-2">
           <Controller
@@ -35,6 +35,7 @@ export const LoginForm: FC<LoginFormProps> = ({ onFirstStepCallback, onSecondSte
             control={control}
             render={({ field, fieldState }) => (
               <Input
+                type="tel"
                 label="Телефон"
                 placeholder="+380*********"
                 fullWidth
