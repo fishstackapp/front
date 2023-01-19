@@ -43,7 +43,7 @@ export const MenuItem: FC<MenuItemProps> = ({
   };
 
   return (
-    <div className="w-96 rounded-2xl bg-white shadow-xl">
+    <div className="w-72 lg:w-96 rounded-2xl bg-white shadow-xl flex flex-col">
       <div className="relative">
         <AdvancedImage cldImg={imageCld} width={384} height={240} className="rounded-t-2xl" />
         {weight && (
@@ -52,13 +52,13 @@ export const MenuItem: FC<MenuItemProps> = ({
           </span>
         )}
       </div>
-      <div className="flex flex-col justify-between p-8 h-[calc(100%_-_15rem)]">
+      <div className="flex flex-col flex-1 justify-between p-4 sm:p-8 h-[calc(100%_-_15rem)]">
         <div>
           <h2 className={titleClasses}>{title}</h2>
-          {descriptions && <p className="mb-8">{descriptions}</p>}
+          {descriptions && <p className="mb-4 sm:mb-8 text-sm sm:text-base">{descriptions}</p>}
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-xl font-semibold">{price} грн.</span>
+        <div className="flex items-center justify-between flex-col gap-3 sm:flex-row">
+          <span className="text-xl font-semibold w-full sm:w-1/2 ">{price} грн.</span>
           <Button onClick={handleAddToCart}>Додати до кошика</Button>
         </div>
       </div>
