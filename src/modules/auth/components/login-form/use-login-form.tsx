@@ -1,9 +1,13 @@
 import { phoneRegexp } from '@app/common/utils/regex';
+import {
+  LoginFormStep,
+  LoginFormStepKeys,
+  LoginFormValues,
+} from '@app/modules/auth/components/login-form/login-form.types';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
-import { LoginFormStep, LoginFormStepKeys, LoginFormValues } from './login-form.types';
 
 const generateValidationSchema = (step: LoginFormStepKeys) => {
   const baseValidation = {
@@ -28,7 +32,7 @@ export const useLoginForm = (
   step: LoginFormStepKeys,
   setStep: (step: LoginFormStepKeys) => void,
   firstStepCallback?: (phoneNumber: string) => Promise<void>,
-  secondStepCallback?: (phoneNumber: string, code: string) => Promise<void>,
+  secondStepCallback?: (phoneNumber: string, code: string) => Promise<void>
 ) => {
   const {
     control,
@@ -57,8 +61,8 @@ export const useLoginForm = (
       if (secondStepCallback !== undefined) {
         await secondStepCallback(values.phoneNumber, values.code);
       }
-    } catch (error) {
-      toast.error((error as Error).message);
+    } catch (e) {
+      toast.error((e as Error).message);
     }
   };
 

@@ -1,3 +1,3 @@
-import { makeVar } from "@apollo/client";
+import { makeVar } from '@apollo/client';
 
-export const isLoginReactive = makeVar(false)
+export const isLoggedInReactive = makeVar(false);

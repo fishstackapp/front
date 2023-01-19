@@ -5,7 +5,6 @@ export const useGetMeDataQuery = () => {
   const { loading, data } = useGetCustomerDataQuery();
 
   let modifiedData: FrontCustomer | undefined;
-
   if (data) {
     modifiedData = data.customers[0];
   }

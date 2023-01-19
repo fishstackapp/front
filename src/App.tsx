@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useGetCategoriesQuery } from './core/types';
-import { isLoginReactive } from './modules/auth/store/reactive-vars';
+import { isLoggedInReactive } from './modules/auth/store/reactive-vars';
 import { Header } from './common/components/header/header.component';
 import { Footer } from './common/components/footer/footer.component';
 import { MenuPage } from './modules/menu/pages/menu.page';
@@ -17,7 +17,7 @@ export const App = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('jwt');
-    isLoginReactive(Boolean(token));
+    isLoggedInReactive(Boolean(token));
   }, []);
 
   return (

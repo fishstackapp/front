@@ -3,30 +3,37 @@ import { useCustomerLoginLazyQuery, useCustomerVerifyCodeLazyQuery } from '@app/
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 import { LoginForm } from '../components/login-form/login-form.component';
-import { isLoginReactive } from '../store/reactive-vars';
+import { useAuthState } from '../hooks/use-auth-state';
 
 export const LoginPage = () => {
   const navigate = useNavigate();
-  const [sendPhoneNumber] = useCustomerLoginLazyQuery({ fetchPolicy: 'network-only' });
-  const [sendPhoneWithCode] = useCustomerVerifyCodeLazyQuery({ fetchPolicy: 'network-only' });
+  const { login } = useAuthState();
+
+  const [sendPhoneNumber] = useCustomerLoginLazyQuery({
+    fetchPolicy: 'network-only',
+  });
+  const [sendPhoneWithCode] = useCustomerVerifyCodeLazyQuery({
+    fetchPolicy: 'network-only',
+  });
 
   const onFirstStepCallback = async (phoneNumber: string) => {
     const queryResult = await sendPhoneNumber({ variables: { phoneNumber } });
-
+    
     validateApolloResponse(queryResult);
   };
 
   const onSecondStepCallback = async (phoneNumber: string, code: string) => {
-    const queryResult = await sendPhoneWithCode({ variables: { phoneNumber, code } });
+    const queryResult = await sendPhoneWithCode({
+      variables: { phoneNumber, code },
+    });
 
     validateApolloResponse(queryResult);
 
     if (queryResult.data?.customerVerifyCode?.accessToken) {
-      localStorage.setItem('jwt', queryResult.data?.customerVerifyCode?.accessToken);
-      isLoginReactive(true);
-    }
+      login(queryResult.data.customerVerifyCode?.accessToken);
 
-    navigate('/');
+      navigate('/');
+    }
   };
 
   return (

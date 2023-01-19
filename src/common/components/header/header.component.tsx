@@ -6,7 +6,7 @@ import { Skeleton } from '../skeleton/skeleton.component';
 import { Link, useLocation } from 'react-router-dom';
 import { HeaderCategoryLink } from '../link/link.component';
 import { useReactiveVar } from '@apollo/client';
-import { isLoginReactive } from '@app/modules/auth/store/reactive-vars';
+import { isLoggedInReactive } from '@app/modules/auth/store/reactive-vars';
 import { toggleCart } from '@app/modules/cart/store/cart-opened-state';
 import { ReactComponent as ShoppingCartSolidIcon } from '@app/assets/icons/shopping-cart-solid.svg';
 import { ReactComponent as Bars3Icon } from '@app/assets/icons/bars-3.svg';
@@ -18,7 +18,7 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
-  const isLogin = useReactiveVar(isLoginReactive);
+  const isLogin = useReactiveVar(isLoggedInReactive);
 
   const location = useLocation();
   const isHomePage = location.pathname === '/';

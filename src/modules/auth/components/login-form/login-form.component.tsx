@@ -1,14 +1,21 @@
-import { FC, useState } from 'react';
-import { Controller } from 'react-hook-form';
-import { useLoginForm } from './use-login-form';
 import { Button } from '@app/common/components/button/button.component';
 import { Input } from '@app/common/components/input/input.component';
+import { FC, useState } from 'react';
+import { Controller } from 'react-hook-form';
 import { Counter } from '@app/common/components/counter/counter.component';
-import { LoginFormProps, LoginFormStep, LoginFormStepKeys } from './login-form.types';
+import { toast } from 'react-toastify';
+import {
+  LoginFormProps,
+  LoginFormStep,
+  LoginFormStepKeys,
+} from '@app/modules/auth/components/login-form/login-form.types';
+import { useLoginForm } from '@app/modules/auth/components/login-form/use-login-form';
 
-export const LoginForm: FC<LoginFormProps> = ({ onFirstStepCallback, onSecondStepCallback }) => {
+export const LoginForm: FC<LoginFormProps> = ({
+  onFirstStepCallback,
+  onSecondStepCallback,
+}) => {
   const [step, setStep] = useState<LoginFormStepKeys>(LoginFormStep.first);
-
   const { getValues, onSubmit, control, isSubmitting } = useLoginForm(
     step,
     setStep,
@@ -22,25 +29,27 @@ export const LoginForm: FC<LoginFormProps> = ({ onFirstStepCallback, onSecondSte
     if (onFirstStepCallback) {
       try {
         await onFirstStepCallback(phoneNumber);
-      } catch (error) {}
+      } catch (e) {
+        toast.error((e as Error).message);
+      }
     }
   };
 
   return (
     <div className="max-w-112 py-8 px-10 bg-white rounded-lg shadow mx-auto">
       <form onSubmit={onSubmit}>
-        <div className="flex flex-col gap-2">
+        <div className="flex gap-2 flex-col">
           <Controller
             name="phoneNumber"
             control={control}
             render={({ field, fieldState }) => (
               <Input
-                type="tel"
                 label="Телефон"
-                placeholder="+380*********"
+                placeholder="+380671111111"
                 fullWidth
                 error={fieldState.error?.message}
                 disabled={step === LoginFormStep.second}
+                type="tel"
                 {...field}
               />
             )}
@@ -62,11 +71,7 @@ export const LoginForm: FC<LoginFormProps> = ({ onFirstStepCallback, onSecondSte
           )}
           <div className="text-center">
             <Button type="submit" disabled={isSubmitting}>
-              {step === LoginFormStep.first ? (
-                <span className="text-white">Отримати код</span>
-              ) : (
-                <span className="text-white">Війти</span>
-              )}
+              {step === LoginFormStep.first ? 'Отримати код' : 'Війти'}
             </Button>
           </div>
           {step === LoginFormStep.second && (
