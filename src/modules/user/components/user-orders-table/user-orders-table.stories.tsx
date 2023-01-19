@@ -223,6 +223,20 @@ const mockData = {
         "id": "DONE",
         "label": "Готовий до відправки"
       }
+    ],
+    "payment_status": [
+      {
+        "id": "PROCESSING",
+        "label": "Очікуємо оплату"
+      },
+      {
+        "id": "SUCCEEDED",
+        "label": "Оплачено"
+      },
+      {
+        "id": "FAILED",
+        "label": "Оплату відмінено"
+      }
     ]
   }
 };

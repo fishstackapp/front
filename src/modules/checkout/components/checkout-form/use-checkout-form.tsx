@@ -15,7 +15,9 @@ export const validation = yup.object({
     .required('Введіть номер телефону'),
   address: yup.string().required("Поле обов'язкове!"),
   comment: yup.string().notRequired(),
-  paymentType: yup.string().oneOf([Payment_Types_Enum.Card, Payment_Types_Enum.Cash]),
+  paymentType: yup
+    .string()
+    .oneOf([Payment_Types_Enum.Card, Payment_Types_Enum.Cash, Payment_Types_Enum.Online]),
 });
 
 export const useCheckoutForm = (options?: useCheckoutFormOptions) => {

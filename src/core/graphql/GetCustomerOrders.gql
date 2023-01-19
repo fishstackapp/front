@@ -9,8 +9,13 @@ query GetCustomerOrders {
     }
     status
     sum
+    payment_status
   }
   order_status {
+    id
+    label
+  }
+  payment_status {
     id
     label
   }

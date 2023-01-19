@@ -14,7 +14,7 @@ export const UserOrders: FC<UserOrdersProps> = () => {
       {loading ? (
         <UserOrdersTableLoading />
       ) : data?.orders.length ? (
-        <UserOrdersTable data={data.orders} orderStatus={data.order_status} />
+        <UserOrdersTable data={data.orders} orderStatus={data.order_status} paymentStatus={data.payment_status}/>
       ) : (
         <h1 className="p-6 text-center text-lg">У вас ще нема замовлень</h1>
       )}
