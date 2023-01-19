@@ -1,0 +1,5 @@
+query CustomerVerifyCode($code: String!, $phoneNumber: String!) {
+  customerVerifyCode(input: {code: $code, phoneNumber: $phoneNumber}) {
+    accessToken
+  }
+}

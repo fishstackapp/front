@@ -3,7 +3,7 @@ import { FC } from "react";
 import { MenuList } from "../menu-list/menu-list.component";
 
 interface MenuCategoryProps {
-  data: Categories;
+  data: Omit<Categories, 'menu_items_aggregate'>;
 }
 
 export const MenuCategory:FC<MenuCategoryProps> = ({data}) => {
