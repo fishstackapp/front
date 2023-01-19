@@ -43,12 +43,14 @@ export const CheckoutPage: FC<CheckoutPageProps> = () => {
       },
     });
 
-    navigate('/checkout/thank-you', { replace: true });
-    // cleanCart();
+    cleanCart();
+
     if(newOrder.data?.createOrder?.checkout_url){
       window.location.href = newOrder.data?.createOrder?.checkout_url
       return ;
     }
+
+    navigate('/checkout/thank-you', { replace: true });
   };
 
   const { data } = useGetMeDataQuery();
