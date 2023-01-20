@@ -11,7 +11,7 @@ interface MobileMenuProps {
 export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened }) => {
   const { isLoggedin, logout } = useAuthState();
   
-  const mobileMenuClasses = clsx('bg-white z-10 fixed w-full mt-12 h-full p-4 sm:hidden', {
+  const mobileMenuClasses = clsx('text-lg text-center bg-white z-10 fixed w-full mt-12 h-full p-10 sm:hidden', {
     hidden: !isMenuOpened,
     block: isMenuOpened,
   });
@@ -27,26 +27,26 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened 
     <div className={mobileMenuClasses}>
       <ul>
         <li>
-          <Link to="/checkout" className="block w-full border-b py-2" onClick={closeMenu}>
+          <Link to="/checkout" className="block w-full border-b py-4" onClick={closeMenu}>
             До корзини
           </Link>
         </li>
         {isLoggedin ? (
           <>
             <li>
-              <Link to="/profile" className="block w-full border-b py-2" onClick={closeMenu}>
+              <Link to="/profile" className="block w-full border-b py-4" onClick={closeMenu}>
                 Ваш профіль
               </Link>
             </li>
             <li>
-              <Link to="/" className="block w-full border-b py-2" onClick={handleLogout}>
+              <Link to="/" className="block w-full border-b py-4" onClick={handleLogout}>
                 Вийти
               </Link>
             </li>
           </>
         ) : (
           <li>
-            <Link to="/login" className="block w-full border-b py-2" onClick={closeMenu}>
+            <Link to="/login" className="block w-full border-b py-4" onClick={closeMenu}>
               Війти
             </Link>
           </li>
