@@ -27,7 +27,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened 
     <div className={mobileMenuClasses}>
       <ul>
         <li>
-          <Link to="/chekout" className="block w-full border-b py-2" onClick={closeMenu}>
+          <Link to="/checkout" className="block w-full border-b py-2" onClick={closeMenu}>
             До корзини
           </Link>
         </li>
