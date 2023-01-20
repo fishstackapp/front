@@ -17,7 +17,7 @@ export const CartSidebar: FC<CartSidebarProps> = () => {
   const cartItems = useReactiveVar(cartState);
 
   const cartClasses = clsx(
-    'h-[calc(100vh_-_3rem)] w-112 p-6 shadow-xl fixed z-10 bg-white right-0 top-12 transition-all',
+    'h-[calc(100vh_-_3rem)] w-112 p-6 shadow-xl fixed z-10 bg-white right-0 top-12 transition-all hidden sm:block',
     {
       'translate-x-full': !isOpened,
     }

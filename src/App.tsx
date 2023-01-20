@@ -1,7 +1,5 @@
-import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useGetCategoriesQuery } from './core/types';
-import { isLoggedInReactive } from './modules/auth/store/reactive-vars';
 import { Header } from './common/components/header/header.component';
 import { Footer } from './common/components/footer/footer.component';
 import { MenuPage } from './modules/menu/pages/menu.page';
@@ -11,14 +9,12 @@ import { PrivateRoute } from './common/components/routes/private-route/private-r
 import { CartSidebar } from './modules/cart/components/cart-sidebar/cart-sidebar.component';
 import { CheckoutPage } from './modules/checkout/pages/checkout.page';
 import { ThankYouPage } from './modules/checkout/pages/thank-you.page';
+import { useAuthState } from './modules/auth/hooks/use-auth-state';
 
 export const App = () => {
   const { data, loading } = useGetCategoriesQuery();
 
-  useEffect(() => {
-    const token = localStorage.getItem('jwt');
-    isLoggedInReactive(Boolean(token));
-  }, []);
+  useAuthState();
 
   return (
     <div className="flex min-h-screen flex-col">

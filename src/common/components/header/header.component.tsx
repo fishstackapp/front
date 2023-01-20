@@ -5,12 +5,11 @@ import { Button } from '../button/button.component';
 import { Skeleton } from '../skeleton/skeleton.component';
 import { Link, useLocation } from 'react-router-dom';
 import { HeaderCategoryLink } from '../link/link.component';
-import { useReactiveVar } from '@apollo/client';
-import { isLoggedInReactive } from '@app/modules/auth/store/reactive-vars';
 import { toggleCart } from '@app/modules/cart/store/cart-opened-state';
 import { ReactComponent as ShoppingCartSolidIcon } from '@app/assets/icons/shopping-cart-solid.svg';
 import { ReactComponent as Bars3Icon } from '@app/assets/icons/bars-3.svg';
-import clsx from 'clsx';
+import { useAuthState } from '@app/modules/auth/hooks/use-auth-state';
+import { MobileMenu } from '../mobile-menu/mobile-menu.component';
 
 interface HeaderProps {
   isLoading?: boolean;
@@ -18,7 +17,7 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
-  const isLogin = useReactiveVar(isLoggedInReactive);
+  const { isLoggedin } = useAuthState();
 
   const location = useLocation();
   const isHomePage = location.pathname === '/';
@@ -27,11 +26,6 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
 
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const togleMenuOpened = () => setIsMenuOpened(v => !v);
-  const closeMenu = () => setIsMenuOpened(false);
-  const mobileMenuClasses = clsx('bg-white z-10 fixed w-full mt-12 h-full p-4 sm:hidden', {
-    hidden: !isMenuOpened,
-    block: isMenuOpened,
-  });
 
   return (
     <>
@@ -60,11 +54,11 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
                       {category.title}
                     </HeaderCategoryLink>
                   ))}
-                  <button className="ml-auto sm:hidden" onClick={togleMenuOpened}>
-                    <Bars3Icon />
-                  </button>
                 </div>
               )}
+              <button className="ml-auto sm:hidden" onClick={togleMenuOpened}>
+                <Bars3Icon />
+              </button>
             </>
           )}
         </div>
@@ -75,7 +69,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
             </button>
           )}
 
-          {isLogin ? (
+          {isLoggedin ? (
             <UserDropdown />
           ) : (
             !isLoginPage && (
@@ -86,20 +80,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
           )}
         </div>
       </div>
-      <div className={mobileMenuClasses}>
-        <ul>
-          <li>
-            <Link to="/login" className="block w-full border-b py-2" onClick={closeMenu}>
-              Війти
-            </Link>
-          </li>
-          <li>
-            <Link to="/chekout" className="block w-full border-b py-2" onClick={closeMenu}>
-              До корзини
-            </Link>
-          </li>
-        </ul>
-      </div>
+      <MobileMenu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened}/>
     </>
   );
 };

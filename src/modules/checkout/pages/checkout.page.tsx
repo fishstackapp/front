@@ -62,7 +62,7 @@ export const CheckoutPage: FC<CheckoutPageProps> = () => {
       </Helmet>
       <Container>
         <ActionPaper title="Замовлення">
-          <div className="flex gap-19">
+          <div className="flex gap-19 flex-col-reverse sm:flex-row">
             <div className="flex-1">
               <CheckoutForm submitCallback={handleCheckoutSubmit} initialValues={data} />
             </div>

@@ -28,7 +28,7 @@ export const CartItem: FC<CartItemProps> = ({ image, title, count, price, menuIt
 
   return (
     <div className="border-t border-gray-200 pt-6">
-      <div className="flex gap-6">
+      <div className="flex gap-6 flex-col sm:flex-row">
         <AdvancedImage cldImg={imageCld} width={128} height={128} className="rounded-md" />
         <div className="flex w-full flex-col justify-between">
           <div className="flex flex-col gap-2">
