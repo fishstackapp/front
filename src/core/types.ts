@@ -139,7 +139,6 @@ export type Admin_Aggregate_Fields = {
   min?: Maybe<Admin_Min_Fields>;
 };
 
-
 /** aggregate fields of "admin" */
 export type Admin_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Admin_Select_Column>>;
@@ -161,7 +160,7 @@ export enum Admin_Constraint {
   /** unique or primary key constraint on columns "id" */
   AdminPkey = 'admin_pkey',
   /** unique or primary key constraint on columns "username" */
-  AdminUsernameKey = 'admin_username_key'
+  AdminUsernameKey = 'admin_username_key',
 }
 
 /** input type for inserting data into table "admin" */
@@ -222,7 +221,7 @@ export enum Admin_Select_Column {
   /** column name */
   Password = 'password',
   /** column name */
-  Username = 'username'
+  Username = 'username',
 }
 
 /** input type for updating data in table "admin" */
@@ -254,7 +253,7 @@ export enum Admin_Update_Column {
   /** column name */
   Password = 'password',
   /** column name */
-  Username = 'username'
+  Username = 'username',
 }
 
 export type Admin_Updates = {
@@ -288,7 +287,6 @@ export type Categories = {
   title: Scalars['String'];
 };
 
-
 /** columns and relationships of "categories" */
 export type CategoriesMenu_ItemsArgs = {
   distinct_on?: InputMaybe<Array<Menu_Select_Column>>;
@@ -297,7 +295,6 @@ export type CategoriesMenu_ItemsArgs = {
   order_by?: InputMaybe<Array<Menu_Order_By>>;
   where?: InputMaybe<Menu_Bool_Exp>;
 };
-
 
 /** columns and relationships of "categories" */
 export type CategoriesMenu_Items_AggregateArgs = {
@@ -323,7 +320,6 @@ export type Categories_Aggregate_Fields = {
   min?: Maybe<Categories_Min_Fields>;
 };
 
-
 /** aggregate fields of "categories" */
 export type Categories_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Categories_Select_Column>>;
@@ -345,7 +341,7 @@ export type Categories_Bool_Exp = {
 /** unique or primary key constraints on table "categories" */
 export enum Categories_Constraint {
   /** unique or primary key constraint on columns "id" */
-  CategoryPkey = 'category_pkey'
+  CategoryPkey = 'category_pkey',
 }
 
 /** input type for inserting data into table "categories" */
@@ -415,7 +411,7 @@ export enum Categories_Select_Column {
   /** column name */
   Slug = 'slug',
   /** column name */
-  Title = 'title'
+  Title = 'title',
 }
 
 /** input type for updating data in table "categories" */
@@ -447,7 +443,7 @@ export enum Categories_Update_Column {
   /** column name */
   Slug = 'slug',
   /** column name */
-  Title = 'title'
+  Title = 'title',
 }
 
 export type Categories_Updates = {
@@ -461,7 +457,7 @@ export enum Cursor_Ordering {
   /** ascending ordering of the cursor */
   Asc = 'ASC',
   /** descending ordering of the cursor */
-  Desc = 'DESC'
+  Desc = 'DESC',
 }
 
 export type CustomerLoginInput = {
@@ -497,7 +493,6 @@ export type Customers = {
   twilioVerificationSid?: Maybe<Scalars['String']>;
 };
 
-
 /** columns and relationships of "customers" */
 export type CustomersOrdersArgs = {
   distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
@@ -506,7 +501,6 @@ export type CustomersOrdersArgs = {
   order_by?: InputMaybe<Array<Orders_Order_By>>;
   where?: InputMaybe<Orders_Bool_Exp>;
 };
-
 
 /** columns and relationships of "customers" */
 export type CustomersOrders_AggregateArgs = {
@@ -531,7 +525,6 @@ export type Customers_Aggregate_Fields = {
   max?: Maybe<Customers_Max_Fields>;
   min?: Maybe<Customers_Min_Fields>;
 };
-
 
 /** aggregate fields of "customers" */
 export type Customers_Aggregate_FieldsCountArgs = {
@@ -558,7 +551,7 @@ export enum Customers_Constraint {
   /** unique or primary key constraint on columns "phone" */
   CustomersPhoneKey = 'customers_phone_key',
   /** unique or primary key constraint on columns "id" */
-  CustomersPkey = 'customers_pkey'
+  CustomersPkey = 'customers_pkey',
 }
 
 /** input type for inserting data into table "customers" */
@@ -640,7 +633,7 @@ export enum Customers_Select_Column {
   /** column name */
   Phone = 'phone',
   /** column name */
-  TwilioVerificationSid = 'twilioVerificationSid'
+  TwilioVerificationSid = 'twilioVerificationSid',
 }
 
 /** input type for updating data in table "customers" */
@@ -680,7 +673,7 @@ export enum Customers_Update_Column {
   /** column name */
   Phone = 'phone',
   /** column name */
-  TwilioVerificationSid = 'twilioVerificationSid'
+  TwilioVerificationSid = 'twilioVerificationSid',
 }
 
 export type Customers_Updates = {
@@ -732,7 +725,6 @@ export type Last_Week_Orders_Aggregate_Fields = {
   var_samp?: Maybe<Last_Week_Orders_Var_Samp_Fields>;
   variance?: Maybe<Last_Week_Orders_Variance_Fields>;
 };
-
 
 /** aggregate fields of "last_week_orders" */
 export type Last_Week_Orders_Aggregate_FieldsCountArgs = {
@@ -787,7 +779,7 @@ export enum Last_Week_Orders_Select_Column {
   /** column name */
   Date = 'date',
   /** column name */
-  Sum = 'sum'
+  Sum = 'sum',
 }
 
 /** aggregate stddev on columns */
@@ -902,7 +894,6 @@ export type Menu_Aggregate_Fields = {
   variance?: Maybe<Menu_Variance_Fields>;
 };
 
-
 /** aggregate fields of "menu" */
 export type Menu_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Menu_Select_Column>>;
@@ -962,7 +953,7 @@ export type Menu_Bool_Exp = {
 /** unique or primary key constraints on table "menu" */
 export enum Menu_Constraint {
   /** unique or primary key constraint on columns "id" */
-  MenuPkey = 'menu_pkey'
+  MenuPkey = 'menu_pkey',
 }
 
 /** input type for incrementing numeric columns in table "menu" */
@@ -1084,7 +1075,7 @@ export enum Menu_Select_Column {
   /** column name */
   Title = 'title',
   /** column name */
-  Weight = 'weight'
+  Weight = 'weight',
 }
 
 /** input type for updating data in table "menu" */
@@ -1184,7 +1175,7 @@ export enum Menu_Update_Column {
   /** column name */
   Title = 'title',
   /** column name */
-  Weight = 'weight'
+  Weight = 'weight',
 }
 
 export type Menu_Updates = {
@@ -1382,138 +1373,115 @@ export type Mutation_Root = {
   update_settings_many?: Maybe<Array<Maybe<Settings_Mutation_Response>>>;
 };
 
-
 /** mutation root */
 export type Mutation_RootAdminRegisterArgs = {
   admin: AdminRegisterInput;
 };
-
 
 /** mutation root */
 export type Mutation_RootCreateOrderArgs = {
   order: CreateOrderInput;
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_AdminArgs = {
   where: Admin_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Admin_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_CategoriesArgs = {
   where: Categories_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Categories_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_CustomersArgs = {
   where: Customers_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Customers_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_MenuArgs = {
   where: Menu_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Menu_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Order_StatusArgs = {
   where: Order_Status_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Order_Status_By_PkArgs = {
   id: Scalars['String'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_OrdersArgs = {
   where: Orders_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Orders_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Orders_MenuArgs = {
   where: Orders_Menu_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Orders_Menu_By_PkArgs = {
   id: Scalars['uuid'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Payment_StatusArgs = {
   where: Payment_Status_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Payment_Status_By_PkArgs = {
   id: Scalars['String'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Payment_TypesArgs = {
   where: Payment_Types_Bool_Exp;
 };
-
 
 /** mutation root */
 export type Mutation_RootDelete_Payment_Types_By_PkArgs = {
   id: Scalars['String'];
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_SettingsArgs = {
   where: Settings_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootDelete_Settings_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_AdminArgs = {
@@ -1521,13 +1489,11 @@ export type Mutation_RootInsert_AdminArgs = {
   on_conflict?: InputMaybe<Admin_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Admin_OneArgs = {
   object: Admin_Insert_Input;
   on_conflict?: InputMaybe<Admin_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_CategoriesArgs = {
@@ -1535,13 +1501,11 @@ export type Mutation_RootInsert_CategoriesArgs = {
   on_conflict?: InputMaybe<Categories_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Categories_OneArgs = {
   object: Categories_Insert_Input;
   on_conflict?: InputMaybe<Categories_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_CustomersArgs = {
@@ -1549,13 +1513,11 @@ export type Mutation_RootInsert_CustomersArgs = {
   on_conflict?: InputMaybe<Customers_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Customers_OneArgs = {
   object: Customers_Insert_Input;
   on_conflict?: InputMaybe<Customers_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_MenuArgs = {
@@ -1563,13 +1525,11 @@ export type Mutation_RootInsert_MenuArgs = {
   on_conflict?: InputMaybe<Menu_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Menu_OneArgs = {
   object: Menu_Insert_Input;
   on_conflict?: InputMaybe<Menu_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Order_StatusArgs = {
@@ -1577,13 +1537,11 @@ export type Mutation_RootInsert_Order_StatusArgs = {
   on_conflict?: InputMaybe<Order_Status_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Order_Status_OneArgs = {
   object: Order_Status_Insert_Input;
   on_conflict?: InputMaybe<Order_Status_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_OrdersArgs = {
@@ -1591,13 +1549,11 @@ export type Mutation_RootInsert_OrdersArgs = {
   on_conflict?: InputMaybe<Orders_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Orders_MenuArgs = {
   objects: Array<Orders_Menu_Insert_Input>;
   on_conflict?: InputMaybe<Orders_Menu_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Orders_Menu_OneArgs = {
@@ -1605,13 +1561,11 @@ export type Mutation_RootInsert_Orders_Menu_OneArgs = {
   on_conflict?: InputMaybe<Orders_Menu_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Orders_OneArgs = {
   object: Orders_Insert_Input;
   on_conflict?: InputMaybe<Orders_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Payment_StatusArgs = {
@@ -1619,13 +1573,11 @@ export type Mutation_RootInsert_Payment_StatusArgs = {
   on_conflict?: InputMaybe<Payment_Status_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Payment_Status_OneArgs = {
   object: Payment_Status_Insert_Input;
   on_conflict?: InputMaybe<Payment_Status_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_Payment_TypesArgs = {
@@ -1633,13 +1585,11 @@ export type Mutation_RootInsert_Payment_TypesArgs = {
   on_conflict?: InputMaybe<Payment_Types_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Payment_Types_OneArgs = {
   object: Payment_Types_Insert_Input;
   on_conflict?: InputMaybe<Payment_Types_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootInsert_SettingsArgs = {
@@ -1647,13 +1597,11 @@ export type Mutation_RootInsert_SettingsArgs = {
   on_conflict?: InputMaybe<Settings_On_Conflict>;
 };
 
-
 /** mutation root */
 export type Mutation_RootInsert_Settings_OneArgs = {
   object: Settings_Insert_Input;
   on_conflict?: InputMaybe<Settings_On_Conflict>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_AdminArgs = {
@@ -1661,19 +1609,16 @@ export type Mutation_RootUpdate_AdminArgs = {
   where: Admin_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Admin_By_PkArgs = {
   _set?: InputMaybe<Admin_Set_Input>;
   pk_columns: Admin_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Admin_ManyArgs = {
   updates: Array<Admin_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_CategoriesArgs = {
@@ -1681,19 +1626,16 @@ export type Mutation_RootUpdate_CategoriesArgs = {
   where: Categories_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Categories_By_PkArgs = {
   _set?: InputMaybe<Categories_Set_Input>;
   pk_columns: Categories_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Categories_ManyArgs = {
   updates: Array<Categories_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_CustomersArgs = {
@@ -1701,19 +1643,16 @@ export type Mutation_RootUpdate_CustomersArgs = {
   where: Customers_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Customers_By_PkArgs = {
   _set?: InputMaybe<Customers_Set_Input>;
   pk_columns: Customers_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Customers_ManyArgs = {
   updates: Array<Customers_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_MenuArgs = {
@@ -1722,7 +1661,6 @@ export type Mutation_RootUpdate_MenuArgs = {
   where: Menu_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Menu_By_PkArgs = {
   _inc?: InputMaybe<Menu_Inc_Input>;
@@ -1730,12 +1668,10 @@ export type Mutation_RootUpdate_Menu_By_PkArgs = {
   pk_columns: Menu_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Menu_ManyArgs = {
   updates: Array<Menu_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Order_StatusArgs = {
@@ -1743,19 +1679,16 @@ export type Mutation_RootUpdate_Order_StatusArgs = {
   where: Order_Status_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Order_Status_By_PkArgs = {
   _set?: InputMaybe<Order_Status_Set_Input>;
   pk_columns: Order_Status_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Order_Status_ManyArgs = {
   updates: Array<Order_Status_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_OrdersArgs = {
@@ -1764,7 +1697,6 @@ export type Mutation_RootUpdate_OrdersArgs = {
   where: Orders_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Orders_By_PkArgs = {
   _inc?: InputMaybe<Orders_Inc_Input>;
@@ -1772,12 +1704,10 @@ export type Mutation_RootUpdate_Orders_By_PkArgs = {
   pk_columns: Orders_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Orders_ManyArgs = {
   updates: Array<Orders_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Orders_MenuArgs = {
@@ -1786,7 +1716,6 @@ export type Mutation_RootUpdate_Orders_MenuArgs = {
   where: Orders_Menu_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Orders_Menu_By_PkArgs = {
   _inc?: InputMaybe<Orders_Menu_Inc_Input>;
@@ -1794,12 +1723,10 @@ export type Mutation_RootUpdate_Orders_Menu_By_PkArgs = {
   pk_columns: Orders_Menu_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Orders_Menu_ManyArgs = {
   updates: Array<Orders_Menu_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Payment_StatusArgs = {
@@ -1807,19 +1734,16 @@ export type Mutation_RootUpdate_Payment_StatusArgs = {
   where: Payment_Status_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Payment_Status_By_PkArgs = {
   _set?: InputMaybe<Payment_Status_Set_Input>;
   pk_columns: Payment_Status_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Payment_Status_ManyArgs = {
   updates: Array<Payment_Status_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Payment_TypesArgs = {
@@ -1827,19 +1751,16 @@ export type Mutation_RootUpdate_Payment_TypesArgs = {
   where: Payment_Types_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Payment_Types_By_PkArgs = {
   _set?: InputMaybe<Payment_Types_Set_Input>;
   pk_columns: Payment_Types_Pk_Columns_Input;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Payment_Types_ManyArgs = {
   updates: Array<Payment_Types_Updates>;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_SettingsArgs = {
@@ -1847,13 +1768,11 @@ export type Mutation_RootUpdate_SettingsArgs = {
   where: Settings_Bool_Exp;
 };
 
-
 /** mutation root */
 export type Mutation_RootUpdate_Settings_By_PkArgs = {
   _set?: InputMaybe<Settings_Set_Input>;
   pk_columns: Settings_Pk_Columns_Input;
 };
-
 
 /** mutation root */
 export type Mutation_RootUpdate_Settings_ManyArgs = {
@@ -1886,7 +1805,7 @@ export enum Order_By {
   /** in descending order, nulls first */
   DescNullsFirst = 'desc_nulls_first',
   /** in descending order, nulls last */
-  DescNullsLast = 'desc_nulls_last'
+  DescNullsLast = 'desc_nulls_last',
 }
 
 /** columns and relationships of "order_status" */
@@ -1900,7 +1819,6 @@ export type Order_Status = {
   orders_aggregate: Orders_Aggregate;
 };
 
-
 /** columns and relationships of "order_status" */
 export type Order_StatusOrdersArgs = {
   distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
@@ -1909,7 +1827,6 @@ export type Order_StatusOrdersArgs = {
   order_by?: InputMaybe<Array<Orders_Order_By>>;
   where?: InputMaybe<Orders_Bool_Exp>;
 };
-
 
 /** columns and relationships of "order_status" */
 export type Order_StatusOrders_AggregateArgs = {
@@ -1935,7 +1852,6 @@ export type Order_Status_Aggregate_Fields = {
   min?: Maybe<Order_Status_Min_Fields>;
 };
 
-
 /** aggregate fields of "order_status" */
 export type Order_Status_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Order_Status_Select_Column>>;
@@ -1956,7 +1872,7 @@ export type Order_Status_Bool_Exp = {
 /** unique or primary key constraints on table "order_status" */
 export enum Order_Status_Constraint {
   /** unique or primary key constraint on columns "id" */
-  OrderStatusPkey = 'order_status_pkey'
+  OrderStatusPkey = 'order_status_pkey',
 }
 
 export enum Order_Status_Enum {
@@ -1969,7 +1885,7 @@ export enum Order_Status_Enum {
   /** Готується */
   InProgress = 'IN_PROGRESS',
   /** Новий */
-  New = 'NEW'
+  New = 'NEW',
 }
 
 /** Boolean expression to compare columns of type "order_status_enum". All fields are combined with logical 'AND'. */
@@ -2035,7 +1951,7 @@ export enum Order_Status_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Label = 'label'
+  Label = 'label',
 }
 
 /** input type for updating data in table "order_status" */
@@ -2063,7 +1979,7 @@ export enum Order_Status_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Label = 'label'
+  Label = 'label',
 }
 
 export type Order_Status_Updates = {
@@ -2095,7 +2011,6 @@ export type Orders = {
   sum?: Maybe<Scalars['numeric']>;
 };
 
-
 /** columns and relationships of "orders" */
 export type OrdersOrder_ItemsArgs = {
   distinct_on?: InputMaybe<Array<Orders_Menu_Select_Column>>;
@@ -2104,7 +2019,6 @@ export type OrdersOrder_ItemsArgs = {
   order_by?: InputMaybe<Array<Orders_Menu_Order_By>>;
   where?: InputMaybe<Orders_Menu_Bool_Exp>;
 };
-
 
 /** columns and relationships of "orders" */
 export type OrdersOrder_Items_AggregateArgs = {
@@ -2148,7 +2062,6 @@ export type Orders_Aggregate_Fields = {
   var_samp?: Maybe<Orders_Var_Samp_Fields>;
   variance?: Maybe<Orders_Variance_Fields>;
 };
-
 
 /** aggregate fields of "orders" */
 export type Orders_Aggregate_FieldsCountArgs = {
@@ -2213,7 +2126,7 @@ export type Orders_Bool_Exp = {
 /** unique or primary key constraints on table "orders" */
 export enum Orders_Constraint {
   /** unique or primary key constraint on columns "id" */
-  OrdersPkey = 'orders_pkey'
+  OrdersPkey = 'orders_pkey',
 }
 
 /** input type for incrementing numeric columns in table "orders" */
@@ -2307,7 +2220,6 @@ export type Orders_Menu_Aggregate_Fields = {
   variance?: Maybe<Orders_Menu_Variance_Fields>;
 };
 
-
 /** aggregate fields of "orders_menu" */
 export type Orders_Menu_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Orders_Menu_Select_Column>>;
@@ -2363,7 +2275,7 @@ export type Orders_Menu_Bool_Exp = {
 /** unique or primary key constraints on table "orders_menu" */
 export enum Orders_Menu_Constraint {
   /** unique or primary key constraint on columns "id" */
-  OrdersMenuPkey = 'orders_menu_pkey'
+  OrdersMenuPkey = 'orders_menu_pkey',
 }
 
 /** input type for incrementing numeric columns in table "orders_menu" */
@@ -2455,7 +2367,7 @@ export enum Orders_Menu_Select_Column {
   /** column name */
   MenuId = 'menu_id',
   /** column name */
-  OrderId = 'order_id'
+  OrderId = 'order_id',
 }
 
 /** input type for updating data in table "orders_menu" */
@@ -2535,7 +2447,7 @@ export enum Orders_Menu_Update_Column {
   /** column name */
   MenuId = 'menu_id',
   /** column name */
-  OrderId = 'order_id'
+  OrderId = 'order_id',
 }
 
 export type Orders_Menu_Updates = {
@@ -2668,7 +2580,7 @@ export enum Orders_Select_Column {
   /** column name */
   PaymentType = 'payment_type',
   /** column name */
-  Status = 'status'
+  Status = 'status',
 }
 
 /** input type for updating data in table "orders" */
@@ -2772,7 +2684,7 @@ export enum Orders_Update_Column {
   /** column name */
   PaymentType = 'payment_type',
   /** column name */
-  Status = 'status'
+  Status = 'status',
 }
 
 export type Orders_Updates = {
@@ -2838,7 +2750,6 @@ export type Payment_Status_Aggregate_Fields = {
   min?: Maybe<Payment_Status_Min_Fields>;
 };
 
-
 /** aggregate fields of "payment_status" */
 export type Payment_Status_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Payment_Status_Select_Column>>;
@@ -2857,7 +2768,7 @@ export type Payment_Status_Bool_Exp = {
 /** unique or primary key constraints on table "payment_status" */
 export enum Payment_Status_Constraint {
   /** unique or primary key constraint on columns "id" */
-  PaymentStatusPkey = 'payment_status_pkey'
+  PaymentStatusPkey = 'payment_status_pkey',
 }
 
 export enum Payment_Status_Enum {
@@ -2866,7 +2777,7 @@ export enum Payment_Status_Enum {
   /** Очікуємо оплату */
   Processing = 'PROCESSING',
   /** Оплачено */
-  Succeeded = 'SUCCEEDED'
+  Succeeded = 'SUCCEEDED',
 }
 
 /** Boolean expression to compare columns of type "payment_status_enum". All fields are combined with logical 'AND'. */
@@ -2930,7 +2841,7 @@ export enum Payment_Status_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Label = 'label'
+  Label = 'label',
 }
 
 /** input type for updating data in table "payment_status" */
@@ -2958,7 +2869,7 @@ export enum Payment_Status_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Label = 'label'
+  Label = 'label',
 }
 
 export type Payment_Status_Updates = {
@@ -2989,7 +2900,6 @@ export type Payment_Types_Aggregate_Fields = {
   min?: Maybe<Payment_Types_Min_Fields>;
 };
 
-
 /** aggregate fields of "payment_types" */
 export type Payment_Types_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Payment_Types_Select_Column>>;
@@ -3008,7 +2918,7 @@ export type Payment_Types_Bool_Exp = {
 /** unique or primary key constraints on table "payment_types" */
 export enum Payment_Types_Constraint {
   /** unique or primary key constraint on columns "id" */
-  PaymentTypesPkey = 'payment_types_pkey'
+  PaymentTypesPkey = 'payment_types_pkey',
 }
 
 export enum Payment_Types_Enum {
@@ -3017,7 +2927,7 @@ export enum Payment_Types_Enum {
   /** Готівка */
   Cash = 'CASH',
   /** Онлайн */
-  Online = 'ONLINE'
+  Online = 'ONLINE',
 }
 
 /** Boolean expression to compare columns of type "payment_types_enum". All fields are combined with logical 'AND'. */
@@ -3081,7 +2991,7 @@ export enum Payment_Types_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Label = 'label'
+  Label = 'label',
 }
 
 /** input type for updating data in table "payment_types" */
@@ -3109,7 +3019,7 @@ export enum Payment_Types_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  Label = 'label'
+  Label = 'label',
 }
 
 export type Payment_Types_Updates = {
@@ -3196,7 +3106,6 @@ export type Query_Root = {
   settings_by_pk?: Maybe<Settings>;
 };
 
-
 export type Query_RootAdminArgs = {
   distinct_on?: InputMaybe<Array<Admin_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3205,11 +3114,9 @@ export type Query_RootAdminArgs = {
   where?: InputMaybe<Admin_Bool_Exp>;
 };
 
-
 export type Query_RootAdminLoginArgs = {
   admin: AdminLoginInput;
 };
-
 
 export type Query_RootAdmin_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Admin_Select_Column>>;
@@ -3219,11 +3126,9 @@ export type Query_RootAdmin_AggregateArgs = {
   where?: InputMaybe<Admin_Bool_Exp>;
 };
 
-
 export type Query_RootAdmin_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootCategoriesArgs = {
   distinct_on?: InputMaybe<Array<Categories_Select_Column>>;
@@ -3233,7 +3138,6 @@ export type Query_RootCategoriesArgs = {
   where?: InputMaybe<Categories_Bool_Exp>;
 };
 
-
 export type Query_RootCategories_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Categories_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3242,21 +3146,17 @@ export type Query_RootCategories_AggregateArgs = {
   where?: InputMaybe<Categories_Bool_Exp>;
 };
 
-
 export type Query_RootCategories_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootCustomerLoginArgs = {
   input: CustomerLoginInput;
 };
 
-
 export type Query_RootCustomerVerifyCodeArgs = {
   input: CustomerVerifyCodeInput;
 };
-
 
 export type Query_RootCustomersArgs = {
   distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
@@ -3266,7 +3166,6 @@ export type Query_RootCustomersArgs = {
   where?: InputMaybe<Customers_Bool_Exp>;
 };
 
-
 export type Query_RootCustomers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3275,11 +3174,9 @@ export type Query_RootCustomers_AggregateArgs = {
   where?: InputMaybe<Customers_Bool_Exp>;
 };
 
-
 export type Query_RootCustomers_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootLast_Week_OrdersArgs = {
   distinct_on?: InputMaybe<Array<Last_Week_Orders_Select_Column>>;
@@ -3289,7 +3186,6 @@ export type Query_RootLast_Week_OrdersArgs = {
   where?: InputMaybe<Last_Week_Orders_Bool_Exp>;
 };
 
-
 export type Query_RootLast_Week_Orders_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Last_Week_Orders_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3297,7 +3193,6 @@ export type Query_RootLast_Week_Orders_AggregateArgs = {
   order_by?: InputMaybe<Array<Last_Week_Orders_Order_By>>;
   where?: InputMaybe<Last_Week_Orders_Bool_Exp>;
 };
-
 
 export type Query_RootMenuArgs = {
   distinct_on?: InputMaybe<Array<Menu_Select_Column>>;
@@ -3307,7 +3202,6 @@ export type Query_RootMenuArgs = {
   where?: InputMaybe<Menu_Bool_Exp>;
 };
 
-
 export type Query_RootMenu_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Menu_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3316,11 +3210,9 @@ export type Query_RootMenu_AggregateArgs = {
   where?: InputMaybe<Menu_Bool_Exp>;
 };
 
-
 export type Query_RootMenu_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootOrder_StatusArgs = {
   distinct_on?: InputMaybe<Array<Order_Status_Select_Column>>;
@@ -3330,7 +3222,6 @@ export type Query_RootOrder_StatusArgs = {
   where?: InputMaybe<Order_Status_Bool_Exp>;
 };
 
-
 export type Query_RootOrder_Status_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Order_Status_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3339,11 +3230,9 @@ export type Query_RootOrder_Status_AggregateArgs = {
   where?: InputMaybe<Order_Status_Bool_Exp>;
 };
 
-
 export type Query_RootOrder_Status_By_PkArgs = {
   id: Scalars['String'];
 };
-
 
 export type Query_RootOrdersArgs = {
   distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
@@ -3353,7 +3242,6 @@ export type Query_RootOrdersArgs = {
   where?: InputMaybe<Orders_Bool_Exp>;
 };
 
-
 export type Query_RootOrders_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3362,11 +3250,9 @@ export type Query_RootOrders_AggregateArgs = {
   where?: InputMaybe<Orders_Bool_Exp>;
 };
 
-
 export type Query_RootOrders_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootOrders_MenuArgs = {
   distinct_on?: InputMaybe<Array<Orders_Menu_Select_Column>>;
@@ -3376,7 +3262,6 @@ export type Query_RootOrders_MenuArgs = {
   where?: InputMaybe<Orders_Menu_Bool_Exp>;
 };
 
-
 export type Query_RootOrders_Menu_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Orders_Menu_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3385,11 +3270,9 @@ export type Query_RootOrders_Menu_AggregateArgs = {
   where?: InputMaybe<Orders_Menu_Bool_Exp>;
 };
 
-
 export type Query_RootOrders_Menu_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Query_RootPayment_StatusArgs = {
   distinct_on?: InputMaybe<Array<Payment_Status_Select_Column>>;
@@ -3399,7 +3282,6 @@ export type Query_RootPayment_StatusArgs = {
   where?: InputMaybe<Payment_Status_Bool_Exp>;
 };
 
-
 export type Query_RootPayment_Status_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Payment_Status_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3408,11 +3290,9 @@ export type Query_RootPayment_Status_AggregateArgs = {
   where?: InputMaybe<Payment_Status_Bool_Exp>;
 };
 
-
 export type Query_RootPayment_Status_By_PkArgs = {
   id: Scalars['String'];
 };
-
 
 export type Query_RootPayment_TypesArgs = {
   distinct_on?: InputMaybe<Array<Payment_Types_Select_Column>>;
@@ -3422,7 +3302,6 @@ export type Query_RootPayment_TypesArgs = {
   where?: InputMaybe<Payment_Types_Bool_Exp>;
 };
 
-
 export type Query_RootPayment_Types_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Payment_Types_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3431,11 +3310,9 @@ export type Query_RootPayment_Types_AggregateArgs = {
   where?: InputMaybe<Payment_Types_Bool_Exp>;
 };
 
-
 export type Query_RootPayment_Types_By_PkArgs = {
   id: Scalars['String'];
 };
-
 
 export type Query_RootSettingsArgs = {
   distinct_on?: InputMaybe<Array<Settings_Select_Column>>;
@@ -3445,7 +3322,6 @@ export type Query_RootSettingsArgs = {
   where?: InputMaybe<Settings_Bool_Exp>;
 };
 
-
 export type Query_RootSettings_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Settings_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3453,7 +3329,6 @@ export type Query_RootSettings_AggregateArgs = {
   order_by?: InputMaybe<Array<Settings_Order_By>>;
   where?: InputMaybe<Settings_Bool_Exp>;
 };
-
 
 export type Query_RootSettings_By_PkArgs = {
   id: Scalars['uuid'];
@@ -3481,7 +3356,6 @@ export type Settings_Aggregate_Fields = {
   min?: Maybe<Settings_Min_Fields>;
 };
 
-
 /** aggregate fields of "settings" */
 export type Settings_Aggregate_FieldsCountArgs = {
   columns?: InputMaybe<Array<Settings_Select_Column>>;
@@ -3500,7 +3374,7 @@ export type Settings_Bool_Exp = {
 /** unique or primary key constraints on table "settings" */
 export enum Settings_Constraint {
   /** unique or primary key constraint on columns "id" */
-  SettingPkey = 'setting_pkey'
+  SettingPkey = 'setting_pkey',
 }
 
 /** input type for inserting data into table "settings" */
@@ -3555,7 +3429,7 @@ export enum Settings_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  SnacksCategory = 'snacks_category'
+  SnacksCategory = 'snacks_category',
 }
 
 /** input type for updating data in table "settings" */
@@ -3583,7 +3457,7 @@ export enum Settings_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  SnacksCategory = 'snacks_category'
+  SnacksCategory = 'snacks_category',
 }
 
 export type Settings_Updates = {
@@ -3682,7 +3556,6 @@ export type Subscription_Root = {
   settings_stream: Array<Settings>;
 };
 
-
 export type Subscription_RootAdminArgs = {
   distinct_on?: InputMaybe<Array<Admin_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3690,7 +3563,6 @@ export type Subscription_RootAdminArgs = {
   order_by?: InputMaybe<Array<Admin_Order_By>>;
   where?: InputMaybe<Admin_Bool_Exp>;
 };
-
 
 export type Subscription_RootAdmin_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Admin_Select_Column>>;
@@ -3700,18 +3572,15 @@ export type Subscription_RootAdmin_AggregateArgs = {
   where?: InputMaybe<Admin_Bool_Exp>;
 };
 
-
 export type Subscription_RootAdmin_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootAdmin_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Admin_Stream_Cursor_Input>>;
   where?: InputMaybe<Admin_Bool_Exp>;
 };
-
 
 export type Subscription_RootCategoriesArgs = {
   distinct_on?: InputMaybe<Array<Categories_Select_Column>>;
@@ -3721,7 +3590,6 @@ export type Subscription_RootCategoriesArgs = {
   where?: InputMaybe<Categories_Bool_Exp>;
 };
 
-
 export type Subscription_RootCategories_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Categories_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3730,18 +3598,15 @@ export type Subscription_RootCategories_AggregateArgs = {
   where?: InputMaybe<Categories_Bool_Exp>;
 };
 
-
 export type Subscription_RootCategories_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootCategories_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Categories_Stream_Cursor_Input>>;
   where?: InputMaybe<Categories_Bool_Exp>;
 };
-
 
 export type Subscription_RootCustomersArgs = {
   distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
@@ -3751,7 +3616,6 @@ export type Subscription_RootCustomersArgs = {
   where?: InputMaybe<Customers_Bool_Exp>;
 };
 
-
 export type Subscription_RootCustomers_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Customers_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3760,18 +3624,15 @@ export type Subscription_RootCustomers_AggregateArgs = {
   where?: InputMaybe<Customers_Bool_Exp>;
 };
 
-
 export type Subscription_RootCustomers_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootCustomers_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Customers_Stream_Cursor_Input>>;
   where?: InputMaybe<Customers_Bool_Exp>;
 };
-
 
 export type Subscription_RootLast_Week_OrdersArgs = {
   distinct_on?: InputMaybe<Array<Last_Week_Orders_Select_Column>>;
@@ -3781,7 +3642,6 @@ export type Subscription_RootLast_Week_OrdersArgs = {
   where?: InputMaybe<Last_Week_Orders_Bool_Exp>;
 };
 
-
 export type Subscription_RootLast_Week_Orders_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Last_Week_Orders_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3790,13 +3650,11 @@ export type Subscription_RootLast_Week_Orders_AggregateArgs = {
   where?: InputMaybe<Last_Week_Orders_Bool_Exp>;
 };
 
-
 export type Subscription_RootLast_Week_Orders_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Last_Week_Orders_Stream_Cursor_Input>>;
   where?: InputMaybe<Last_Week_Orders_Bool_Exp>;
 };
-
 
 export type Subscription_RootMenuArgs = {
   distinct_on?: InputMaybe<Array<Menu_Select_Column>>;
@@ -3806,7 +3664,6 @@ export type Subscription_RootMenuArgs = {
   where?: InputMaybe<Menu_Bool_Exp>;
 };
 
-
 export type Subscription_RootMenu_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Menu_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3815,18 +3672,15 @@ export type Subscription_RootMenu_AggregateArgs = {
   where?: InputMaybe<Menu_Bool_Exp>;
 };
 
-
 export type Subscription_RootMenu_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootMenu_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Menu_Stream_Cursor_Input>>;
   where?: InputMaybe<Menu_Bool_Exp>;
 };
-
 
 export type Subscription_RootOrder_StatusArgs = {
   distinct_on?: InputMaybe<Array<Order_Status_Select_Column>>;
@@ -3836,7 +3690,6 @@ export type Subscription_RootOrder_StatusArgs = {
   where?: InputMaybe<Order_Status_Bool_Exp>;
 };
 
-
 export type Subscription_RootOrder_Status_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Order_Status_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3845,18 +3698,15 @@ export type Subscription_RootOrder_Status_AggregateArgs = {
   where?: InputMaybe<Order_Status_Bool_Exp>;
 };
 
-
 export type Subscription_RootOrder_Status_By_PkArgs = {
   id: Scalars['String'];
 };
-
 
 export type Subscription_RootOrder_Status_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Order_Status_Stream_Cursor_Input>>;
   where?: InputMaybe<Order_Status_Bool_Exp>;
 };
-
 
 export type Subscription_RootOrdersArgs = {
   distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
@@ -3866,7 +3716,6 @@ export type Subscription_RootOrdersArgs = {
   where?: InputMaybe<Orders_Bool_Exp>;
 };
 
-
 export type Subscription_RootOrders_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Orders_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3875,11 +3724,9 @@ export type Subscription_RootOrders_AggregateArgs = {
   where?: InputMaybe<Orders_Bool_Exp>;
 };
 
-
 export type Subscription_RootOrders_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootOrders_MenuArgs = {
   distinct_on?: InputMaybe<Array<Orders_Menu_Select_Column>>;
@@ -3889,7 +3736,6 @@ export type Subscription_RootOrders_MenuArgs = {
   where?: InputMaybe<Orders_Menu_Bool_Exp>;
 };
 
-
 export type Subscription_RootOrders_Menu_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Orders_Menu_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3898,11 +3744,9 @@ export type Subscription_RootOrders_Menu_AggregateArgs = {
   where?: InputMaybe<Orders_Menu_Bool_Exp>;
 };
 
-
 export type Subscription_RootOrders_Menu_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootOrders_Menu_StreamArgs = {
   batch_size: Scalars['Int'];
@@ -3910,13 +3754,11 @@ export type Subscription_RootOrders_Menu_StreamArgs = {
   where?: InputMaybe<Orders_Menu_Bool_Exp>;
 };
 
-
 export type Subscription_RootOrders_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Orders_Stream_Cursor_Input>>;
   where?: InputMaybe<Orders_Bool_Exp>;
 };
-
 
 export type Subscription_RootPayment_StatusArgs = {
   distinct_on?: InputMaybe<Array<Payment_Status_Select_Column>>;
@@ -3926,7 +3768,6 @@ export type Subscription_RootPayment_StatusArgs = {
   where?: InputMaybe<Payment_Status_Bool_Exp>;
 };
 
-
 export type Subscription_RootPayment_Status_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Payment_Status_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3935,18 +3776,15 @@ export type Subscription_RootPayment_Status_AggregateArgs = {
   where?: InputMaybe<Payment_Status_Bool_Exp>;
 };
 
-
 export type Subscription_RootPayment_Status_By_PkArgs = {
   id: Scalars['String'];
 };
-
 
 export type Subscription_RootPayment_Status_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Payment_Status_Stream_Cursor_Input>>;
   where?: InputMaybe<Payment_Status_Bool_Exp>;
 };
-
 
 export type Subscription_RootPayment_TypesArgs = {
   distinct_on?: InputMaybe<Array<Payment_Types_Select_Column>>;
@@ -3956,7 +3794,6 @@ export type Subscription_RootPayment_TypesArgs = {
   where?: InputMaybe<Payment_Types_Bool_Exp>;
 };
 
-
 export type Subscription_RootPayment_Types_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Payment_Types_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3965,18 +3802,15 @@ export type Subscription_RootPayment_Types_AggregateArgs = {
   where?: InputMaybe<Payment_Types_Bool_Exp>;
 };
 
-
 export type Subscription_RootPayment_Types_By_PkArgs = {
   id: Scalars['String'];
 };
-
 
 export type Subscription_RootPayment_Types_StreamArgs = {
   batch_size: Scalars['Int'];
   cursor: Array<InputMaybe<Payment_Types_Stream_Cursor_Input>>;
   where?: InputMaybe<Payment_Types_Bool_Exp>;
 };
-
 
 export type Subscription_RootSettingsArgs = {
   distinct_on?: InputMaybe<Array<Settings_Select_Column>>;
@@ -3986,7 +3820,6 @@ export type Subscription_RootSettingsArgs = {
   where?: InputMaybe<Settings_Bool_Exp>;
 };
 
-
 export type Subscription_RootSettings_AggregateArgs = {
   distinct_on?: InputMaybe<Array<Settings_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']>;
@@ -3995,11 +3828,9 @@ export type Subscription_RootSettings_AggregateArgs = {
   where?: InputMaybe<Settings_Bool_Exp>;
 };
 
-
 export type Subscription_RootSettings_By_PkArgs = {
   id: Scalars['uuid'];
 };
-
 
 export type Subscription_RootSettings_StreamArgs = {
   batch_size: Scalars['Int'];
@@ -4042,55 +3873,111 @@ export type CreateOrderMutationVariables = Exact<{
   comment?: InputMaybe<Scalars['String']>;
 }>;
 
-
-export type CreateOrderMutation = { __typename?: 'mutation_root', createOrder?: { __typename?: 'CreateOrderOutput', id: string, checkout_url?: string | null } | null };
+export type CreateOrderMutation = {
+  __typename?: 'mutation_root';
+  createOrder?: {
+    __typename?: 'CreateOrderOutput';
+    id: string;
+    checkout_url?: string | null;
+  } | null;
+};
 
 export type CustomerLoginQueryVariables = Exact<{
   phoneNumber: Scalars['String'];
 }>;
 
-
-export type CustomerLoginQuery = { __typename?: 'query_root', customerLogin?: { __typename?: 'customerLoginOutput', status: string } | null };
+export type CustomerLoginQuery = {
+  __typename?: 'query_root';
+  customerLogin?: { __typename?: 'customerLoginOutput'; status: string } | null;
+};
 
 export type CustomerVerifyCodeQueryVariables = Exact<{
   code: Scalars['String'];
   phoneNumber: Scalars['String'];
 }>;
 
+export type CustomerVerifyCodeQuery = {
+  __typename?: 'query_root';
+  customerVerifyCode?: { __typename?: 'customerVerifyCodeOutput'; accessToken: string } | null;
+};
 
-export type CustomerVerifyCodeQuery = { __typename?: 'query_root', customerVerifyCode?: { __typename?: 'customerVerifyCodeOutput', accessToken: string } | null };
+export type GetCategoriesQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetCategoriesQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetCategoriesQuery = {
+  __typename?: 'query_root';
+  categories: Array<{ __typename?: 'categories'; id: any; slug: string; title: string }>;
+};
 
+export type GetCustomerDataQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetCategoriesQuery = { __typename?: 'query_root', categories: Array<{ __typename?: 'categories', id: any, slug: string, title: string }> };
+export type GetCustomerDataQuery = {
+  __typename?: 'query_root';
+  customers: Array<{
+    __typename?: 'customers';
+    address?: string | null;
+    id: any;
+    name?: string | null;
+    phone: string;
+  }>;
+};
 
-export type GetCustomerDataQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetCustomerOrdersQueryVariables = Exact<{ [key: string]: never }>;
 
+export type GetCustomerOrdersQuery = {
+  __typename?: 'query_root';
+  orders: Array<{
+    __typename?: 'orders';
+    created_at: any;
+    status: Order_Status_Enum;
+    sum?: any | null;
+    payment_status?: Payment_Status_Enum | null;
+    order_items: Array<{
+      __typename?: 'orders_menu';
+      amount: any;
+      item?: { __typename?: 'menu'; title: string } | null;
+    }>;
+  }>;
+  order_status: Array<{ __typename?: 'order_status'; id: string; label: string }>;
+  payment_status: Array<{ __typename?: 'payment_status'; id: string; label: string }>;
+};
 
-export type GetCustomerDataQuery = { __typename?: 'query_root', customers: Array<{ __typename?: 'customers', address?: string | null, id: any, name?: string | null, phone: string }> };
+export type GetMenuQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetCustomerOrdersQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetCustomerOrdersQuery = { __typename?: 'query_root', orders: Array<{ __typename?: 'orders', created_at: any, status: Order_Status_Enum, sum?: any | null, payment_status?: Payment_Status_Enum | null, order_items: Array<{ __typename?: 'orders_menu', amount: any, item?: { __typename?: 'menu', title: string } | null }> }>, order_status: Array<{ __typename?: 'order_status', id: string, label: string }>, payment_status: Array<{ __typename?: 'payment_status', id: string, label: string }> };
-
-export type GetMenuQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetMenuQuery = { __typename?: 'query_root', categories: Array<{ __typename?: 'categories', id: any, slug: string, title: string, menu_items: Array<{ __typename?: 'menu', id: any, image: string, price: any, title: string, weight?: any | null, descriptions?: string | null, category_id: any }> }> };
+export type GetMenuQuery = {
+  __typename?: 'query_root';
+  categories: Array<{
+    __typename?: 'categories';
+    id: any;
+    slug: string;
+    title: string;
+    menu_items: Array<{
+      __typename?: 'menu';
+      id: any;
+      image: string;
+      price: any;
+      title: string;
+      weight?: any | null;
+      descriptions?: string | null;
+      category_id: any;
+    }>;
+  }>;
+};
 
 export type GetMenuItemsForCartQueryVariables = Exact<{
   menuIds: Array<Scalars['uuid']> | Scalars['uuid'];
 }>;
 
+export type GetMenuItemsForCartQuery = {
+  __typename?: 'query_root';
+  menu: Array<{ __typename?: 'menu'; image: string; title: string; price: any; id: any }>;
+};
 
-export type GetMenuItemsForCartQuery = { __typename?: 'query_root', menu: Array<{ __typename?: 'menu', image: string, title: string, price: any, id: any }> };
+export type GetSettingQueryVariables = Exact<{ [key: string]: never }>;
 
-export type GetSettingQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetSettingQuery = { __typename?: 'query_root', settings: Array<{ __typename?: 'settings', snacks_category?: any | null }> };
+export type GetSettingQuery = {
+  __typename?: 'query_root';
+  settings: Array<{ __typename?: 'settings'; snacks_category?: any | null }>;
+};
 
 export type UpdateCustomerDataMutationVariables = Exact<{
   id: Scalars['uuid'];
@@ -4098,21 +3985,45 @@ export type UpdateCustomerDataMutationVariables = Exact<{
   address?: InputMaybe<Scalars['String']>;
 }>;
 
-
-export type UpdateCustomerDataMutation = { __typename?: 'mutation_root', update_customers_by_pk?: { __typename?: 'customers', address?: string | null, id: any, name?: string | null, phone: string } | null };
-
+export type UpdateCustomerDataMutation = {
+  __typename?: 'mutation_root';
+  update_customers_by_pk?: {
+    __typename?: 'customers';
+    address?: string | null;
+    id: any;
+    name?: string | null;
+    phone: string;
+  } | null;
+};
 
 export const CreateOrderDocument = gql`
-    mutation CreateOrder($client_name: String!, $client_phone: String!, $client_address: String!, $items: String!, $payment_type: String!, $comment: String = "") {
-  createOrder(
-    order: {client_name: $client_name, client_phone: $client_phone, client_address: $client_address, items: $items, payment_type: $payment_type, comment: $comment}
+  mutation CreateOrder(
+    $client_name: String!
+    $client_phone: String!
+    $client_address: String!
+    $items: String!
+    $payment_type: String!
+    $comment: String = ""
   ) {
-    id
-    checkout_url
+    createOrder(
+      order: {
+        client_name: $client_name
+        client_phone: $client_phone
+        client_address: $client_address
+        items: $items
+        payment_type: $payment_type
+        comment: $comment
+      }
+    ) {
+      id
+      checkout_url
+    }
   }
-}
-    `;
-export type CreateOrderMutationFn = Apollo.MutationFunction<CreateOrderMutation, CreateOrderMutationVariables>;
+`;
+export type CreateOrderMutationFn = Apollo.MutationFunction<
+  CreateOrderMutation,
+  CreateOrderMutationVariables
+>;
 
 /**
  * __useCreateOrderMutation__
@@ -4136,20 +4047,28 @@ export type CreateOrderMutationFn = Apollo.MutationFunction<CreateOrderMutation,
  *   },
  * });
  */
-export function useCreateOrderMutation(baseOptions?: Apollo.MutationHookOptions<CreateOrderMutation, CreateOrderMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<CreateOrderMutation, CreateOrderMutationVariables>(CreateOrderDocument, options);
-      }
+export function useCreateOrderMutation(
+  baseOptions?: Apollo.MutationHookOptions<CreateOrderMutation, CreateOrderMutationVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<CreateOrderMutation, CreateOrderMutationVariables>(
+    CreateOrderDocument,
+    options
+  );
+}
 export type CreateOrderMutationHookResult = ReturnType<typeof useCreateOrderMutation>;
 export type CreateOrderMutationResult = Apollo.MutationResult<CreateOrderMutation>;
-export type CreateOrderMutationOptions = Apollo.BaseMutationOptions<CreateOrderMutation, CreateOrderMutationVariables>;
+export type CreateOrderMutationOptions = Apollo.BaseMutationOptions<
+  CreateOrderMutation,
+  CreateOrderMutationVariables
+>;
 export const CustomerLoginDocument = gql`
-    query CustomerLogin($phoneNumber: String!) {
-  customerLogin(input: {phoneNumber: $phoneNumber}) {
-    status
+  query CustomerLogin($phoneNumber: String!) {
+    customerLogin(input: { phoneNumber: $phoneNumber }) {
+      status
+    }
   }
-}
-    `;
+`;
 
 /**
  * __useCustomerLoginQuery__
@@ -4167,24 +4086,37 @@ export const CustomerLoginDocument = gql`
  *   },
  * });
  */
-export function useCustomerLoginQuery(baseOptions: Apollo.QueryHookOptions<CustomerLoginQuery, CustomerLoginQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<CustomerLoginQuery, CustomerLoginQueryVariables>(CustomerLoginDocument, options);
-      }
-export function useCustomerLoginLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CustomerLoginQuery, CustomerLoginQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<CustomerLoginQuery, CustomerLoginQueryVariables>(CustomerLoginDocument, options);
-        }
+export function useCustomerLoginQuery(
+  baseOptions: Apollo.QueryHookOptions<CustomerLoginQuery, CustomerLoginQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<CustomerLoginQuery, CustomerLoginQueryVariables>(
+    CustomerLoginDocument,
+    options
+  );
+}
+export function useCustomerLoginLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<CustomerLoginQuery, CustomerLoginQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<CustomerLoginQuery, CustomerLoginQueryVariables>(
+    CustomerLoginDocument,
+    options
+  );
+}
 export type CustomerLoginQueryHookResult = ReturnType<typeof useCustomerLoginQuery>;
 export type CustomerLoginLazyQueryHookResult = ReturnType<typeof useCustomerLoginLazyQuery>;
-export type CustomerLoginQueryResult = Apollo.QueryResult<CustomerLoginQuery, CustomerLoginQueryVariables>;
+export type CustomerLoginQueryResult = Apollo.QueryResult<
+  CustomerLoginQuery,
+  CustomerLoginQueryVariables
+>;
 export const CustomerVerifyCodeDocument = gql`
-    query CustomerVerifyCode($code: String!, $phoneNumber: String!) {
-  customerVerifyCode(input: {code: $code, phoneNumber: $phoneNumber}) {
-    accessToken
+  query CustomerVerifyCode($code: String!, $phoneNumber: String!) {
+    customerVerifyCode(input: { code: $code, phoneNumber: $phoneNumber }) {
+      accessToken
+    }
   }
-}
-    `;
+`;
 
 /**
  * __useCustomerVerifyCodeQuery__
@@ -4203,26 +4135,44 @@ export const CustomerVerifyCodeDocument = gql`
  *   },
  * });
  */
-export function useCustomerVerifyCodeQuery(baseOptions: Apollo.QueryHookOptions<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>(CustomerVerifyCodeDocument, options);
-      }
-export function useCustomerVerifyCodeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>(CustomerVerifyCodeDocument, options);
-        }
-export type CustomerVerifyCodeQueryHookResult = ReturnType<typeof useCustomerVerifyCodeQuery>;
-export type CustomerVerifyCodeLazyQueryHookResult = ReturnType<typeof useCustomerVerifyCodeLazyQuery>;
-export type CustomerVerifyCodeQueryResult = Apollo.QueryResult<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>;
-export const GetCategoriesDocument = gql`
-    query GetCategories {
-  categories {
-    id
-    slug
-    title
-  }
+export function useCustomerVerifyCodeQuery(
+  baseOptions: Apollo.QueryHookOptions<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>(
+    CustomerVerifyCodeDocument,
+    options
+  );
 }
-    `;
+export function useCustomerVerifyCodeLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    CustomerVerifyCodeQuery,
+    CustomerVerifyCodeQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<CustomerVerifyCodeQuery, CustomerVerifyCodeQueryVariables>(
+    CustomerVerifyCodeDocument,
+    options
+  );
+}
+export type CustomerVerifyCodeQueryHookResult = ReturnType<typeof useCustomerVerifyCodeQuery>;
+export type CustomerVerifyCodeLazyQueryHookResult = ReturnType<
+  typeof useCustomerVerifyCodeLazyQuery
+>;
+export type CustomerVerifyCodeQueryResult = Apollo.QueryResult<
+  CustomerVerifyCodeQuery,
+  CustomerVerifyCodeQueryVariables
+>;
+export const GetCategoriesDocument = gql`
+  query GetCategories {
+    categories {
+      id
+      slug
+      title
+    }
+  }
+`;
 
 /**
  * __useGetCategoriesQuery__
@@ -4239,27 +4189,40 @@ export const GetCategoriesDocument = gql`
  *   },
  * });
  */
-export function useGetCategoriesQuery(baseOptions?: Apollo.QueryHookOptions<GetCategoriesQuery, GetCategoriesQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCategoriesQuery, GetCategoriesQueryVariables>(GetCategoriesDocument, options);
-      }
-export function useGetCategoriesLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCategoriesQuery, GetCategoriesQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCategoriesQuery, GetCategoriesQueryVariables>(GetCategoriesDocument, options);
-        }
+export function useGetCategoriesQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetCategoriesQuery, GetCategoriesQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetCategoriesQuery, GetCategoriesQueryVariables>(
+    GetCategoriesDocument,
+    options
+  );
+}
+export function useGetCategoriesLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetCategoriesQuery, GetCategoriesQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetCategoriesQuery, GetCategoriesQueryVariables>(
+    GetCategoriesDocument,
+    options
+  );
+}
 export type GetCategoriesQueryHookResult = ReturnType<typeof useGetCategoriesQuery>;
 export type GetCategoriesLazyQueryHookResult = ReturnType<typeof useGetCategoriesLazyQuery>;
-export type GetCategoriesQueryResult = Apollo.QueryResult<GetCategoriesQuery, GetCategoriesQueryVariables>;
+export type GetCategoriesQueryResult = Apollo.QueryResult<
+  GetCategoriesQuery,
+  GetCategoriesQueryVariables
+>;
 export const GetCustomerDataDocument = gql`
-    query GetCustomerData {
-  customers(limit: 1) {
-    address
-    id
-    name
-    phone
+  query GetCustomerData {
+    customers(limit: 1) {
+      address
+      id
+      name
+      phone
+    }
   }
-}
-    `;
+`;
 
 /**
  * __useGetCustomerDataQuery__
@@ -4276,41 +4239,54 @@ export const GetCustomerDataDocument = gql`
  *   },
  * });
  */
-export function useGetCustomerDataQuery(baseOptions?: Apollo.QueryHookOptions<GetCustomerDataQuery, GetCustomerDataQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCustomerDataQuery, GetCustomerDataQueryVariables>(GetCustomerDataDocument, options);
-      }
-export function useGetCustomerDataLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCustomerDataQuery, GetCustomerDataQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCustomerDataQuery, GetCustomerDataQueryVariables>(GetCustomerDataDocument, options);
-        }
+export function useGetCustomerDataQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetCustomerDataQuery, GetCustomerDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetCustomerDataQuery, GetCustomerDataQueryVariables>(
+    GetCustomerDataDocument,
+    options
+  );
+}
+export function useGetCustomerDataLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetCustomerDataQuery, GetCustomerDataQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetCustomerDataQuery, GetCustomerDataQueryVariables>(
+    GetCustomerDataDocument,
+    options
+  );
+}
 export type GetCustomerDataQueryHookResult = ReturnType<typeof useGetCustomerDataQuery>;
 export type GetCustomerDataLazyQueryHookResult = ReturnType<typeof useGetCustomerDataLazyQuery>;
-export type GetCustomerDataQueryResult = Apollo.QueryResult<GetCustomerDataQuery, GetCustomerDataQueryVariables>;
+export type GetCustomerDataQueryResult = Apollo.QueryResult<
+  GetCustomerDataQuery,
+  GetCustomerDataQueryVariables
+>;
 export const GetCustomerOrdersDocument = gql`
-    query GetCustomerOrders {
-  orders(order_by: {created_at: desc}) {
-    created_at
-    order_items {
-      amount
-      item {
-        title
+  query GetCustomerOrders {
+    orders(order_by: { created_at: desc }) {
+      created_at
+      order_items {
+        amount
+        item {
+          title
+        }
       }
+      status
+      sum
+      payment_status
     }
-    status
-    sum
-    payment_status
+    order_status {
+      id
+      label
+    }
+    payment_status {
+      id
+      label
+    }
   }
-  order_status {
-    id
-    label
-  }
-  payment_status {
-    id
-    label
-  }
-}
-    `;
+`;
 
 /**
  * __useGetCustomerOrdersQuery__
@@ -4327,35 +4303,48 @@ export const GetCustomerOrdersDocument = gql`
  *   },
  * });
  */
-export function useGetCustomerOrdersQuery(baseOptions?: Apollo.QueryHookOptions<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>(GetCustomerOrdersDocument, options);
-      }
-export function useGetCustomerOrdersLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>(GetCustomerOrdersDocument, options);
-        }
+export function useGetCustomerOrdersQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>(
+    GetCustomerOrdersDocument,
+    options
+  );
+}
+export function useGetCustomerOrdersLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>(
+    GetCustomerOrdersDocument,
+    options
+  );
+}
 export type GetCustomerOrdersQueryHookResult = ReturnType<typeof useGetCustomerOrdersQuery>;
 export type GetCustomerOrdersLazyQueryHookResult = ReturnType<typeof useGetCustomerOrdersLazyQuery>;
-export type GetCustomerOrdersQueryResult = Apollo.QueryResult<GetCustomerOrdersQuery, GetCustomerOrdersQueryVariables>;
+export type GetCustomerOrdersQueryResult = Apollo.QueryResult<
+  GetCustomerOrdersQuery,
+  GetCustomerOrdersQueryVariables
+>;
 export const GetMenuDocument = gql`
-    query GetMenu {
-  categories {
-    id
-    slug
-    title
-    menu_items {
+  query GetMenu {
+    categories {
       id
-      image
-      price
+      slug
       title
-      weight
-      descriptions
-      category_id
+      menu_items {
+        id
+        image
+        price
+        title
+        weight
+        descriptions
+        category_id
+      }
     }
   }
-}
-    `;
+`;
 
 /**
  * __useGetMenuQuery__
@@ -4372,27 +4361,31 @@ export const GetMenuDocument = gql`
  *   },
  * });
  */
-export function useGetMenuQuery(baseOptions?: Apollo.QueryHookOptions<GetMenuQuery, GetMenuQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMenuQuery, GetMenuQueryVariables>(GetMenuDocument, options);
-      }
-export function useGetMenuLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMenuQuery, GetMenuQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMenuQuery, GetMenuQueryVariables>(GetMenuDocument, options);
-        }
+export function useGetMenuQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetMenuQuery, GetMenuQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetMenuQuery, GetMenuQueryVariables>(GetMenuDocument, options);
+}
+export function useGetMenuLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetMenuQuery, GetMenuQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetMenuQuery, GetMenuQueryVariables>(GetMenuDocument, options);
+}
 export type GetMenuQueryHookResult = ReturnType<typeof useGetMenuQuery>;
 export type GetMenuLazyQueryHookResult = ReturnType<typeof useGetMenuLazyQuery>;
 export type GetMenuQueryResult = Apollo.QueryResult<GetMenuQuery, GetMenuQueryVariables>;
 export const GetMenuItemsForCartDocument = gql`
-    query GetMenuItemsForCart($menuIds: [uuid!]!) {
-  menu(where: {id: {_in: $menuIds}}) {
-    image
-    title
-    price
-    id
+  query GetMenuItemsForCart($menuIds: [uuid!]!) {
+    menu(where: { id: { _in: $menuIds } }) {
+      image
+      title
+      price
+      id
+    }
   }
-}
-    `;
+`;
 
 /**
  * __useGetMenuItemsForCartQuery__
@@ -4410,24 +4403,42 @@ export const GetMenuItemsForCartDocument = gql`
  *   },
  * });
  */
-export function useGetMenuItemsForCartQuery(baseOptions: Apollo.QueryHookOptions<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>(GetMenuItemsForCartDocument, options);
-      }
-export function useGetMenuItemsForCartLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>(GetMenuItemsForCartDocument, options);
-        }
-export type GetMenuItemsForCartQueryHookResult = ReturnType<typeof useGetMenuItemsForCartQuery>;
-export type GetMenuItemsForCartLazyQueryHookResult = ReturnType<typeof useGetMenuItemsForCartLazyQuery>;
-export type GetMenuItemsForCartQueryResult = Apollo.QueryResult<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>;
-export const GetSettingDocument = gql`
-    query GetSetting {
-  settings {
-    snacks_category
-  }
+export function useGetMenuItemsForCartQuery(
+  baseOptions: Apollo.QueryHookOptions<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>(
+    GetMenuItemsForCartDocument,
+    options
+  );
 }
-    `;
+export function useGetMenuItemsForCartLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<
+    GetMenuItemsForCartQuery,
+    GetMenuItemsForCartQueryVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetMenuItemsForCartQuery, GetMenuItemsForCartQueryVariables>(
+    GetMenuItemsForCartDocument,
+    options
+  );
+}
+export type GetMenuItemsForCartQueryHookResult = ReturnType<typeof useGetMenuItemsForCartQuery>;
+export type GetMenuItemsForCartLazyQueryHookResult = ReturnType<
+  typeof useGetMenuItemsForCartLazyQuery
+>;
+export type GetMenuItemsForCartQueryResult = Apollo.QueryResult<
+  GetMenuItemsForCartQuery,
+  GetMenuItemsForCartQueryVariables
+>;
+export const GetSettingDocument = gql`
+  query GetSetting {
+    settings {
+      snacks_category
+    }
+  }
+`;
 
 /**
  * __useGetSettingQuery__
@@ -4444,31 +4455,38 @@ export const GetSettingDocument = gql`
  *   },
  * });
  */
-export function useGetSettingQuery(baseOptions?: Apollo.QueryHookOptions<GetSettingQuery, GetSettingQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetSettingQuery, GetSettingQueryVariables>(GetSettingDocument, options);
-      }
-export function useGetSettingLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetSettingQuery, GetSettingQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetSettingQuery, GetSettingQueryVariables>(GetSettingDocument, options);
-        }
+export function useGetSettingQuery(
+  baseOptions?: Apollo.QueryHookOptions<GetSettingQuery, GetSettingQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<GetSettingQuery, GetSettingQueryVariables>(GetSettingDocument, options);
+}
+export function useGetSettingLazyQuery(
+  baseOptions?: Apollo.LazyQueryHookOptions<GetSettingQuery, GetSettingQueryVariables>
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<GetSettingQuery, GetSettingQueryVariables>(
+    GetSettingDocument,
+    options
+  );
+}
 export type GetSettingQueryHookResult = ReturnType<typeof useGetSettingQuery>;
 export type GetSettingLazyQueryHookResult = ReturnType<typeof useGetSettingLazyQuery>;
 export type GetSettingQueryResult = Apollo.QueryResult<GetSettingQuery, GetSettingQueryVariables>;
 export const UpdateCustomerDataDocument = gql`
-    mutation UpdateCustomerData($id: uuid!, $name: String, $address: String) {
-  update_customers_by_pk(
-    pk_columns: {id: $id}
-    _set: {address: $address, name: $name}
-  ) {
-    address
-    id
-    name
-    phone
+  mutation UpdateCustomerData($id: uuid!, $name: String, $address: String) {
+    update_customers_by_pk(pk_columns: { id: $id }, _set: { address: $address, name: $name }) {
+      address
+      id
+      name
+      phone
+    }
   }
-}
-    `;
-export type UpdateCustomerDataMutationFn = Apollo.MutationFunction<UpdateCustomerDataMutation, UpdateCustomerDataMutationVariables>;
+`;
+export type UpdateCustomerDataMutationFn = Apollo.MutationFunction<
+  UpdateCustomerDataMutation,
+  UpdateCustomerDataMutationVariables
+>;
 
 /**
  * __useUpdateCustomerDataMutation__
@@ -4489,10 +4507,21 @@ export type UpdateCustomerDataMutationFn = Apollo.MutationFunction<UpdateCustome
  *   },
  * });
  */
-export function useUpdateCustomerDataMutation(baseOptions?: Apollo.MutationHookOptions<UpdateCustomerDataMutation, UpdateCustomerDataMutationVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useMutation<UpdateCustomerDataMutation, UpdateCustomerDataMutationVariables>(UpdateCustomerDataDocument, options);
-      }
+export function useUpdateCustomerDataMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    UpdateCustomerDataMutation,
+    UpdateCustomerDataMutationVariables
+  >
+) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<UpdateCustomerDataMutation, UpdateCustomerDataMutationVariables>(
+    UpdateCustomerDataDocument,
+    options
+  );
+}
 export type UpdateCustomerDataMutationHookResult = ReturnType<typeof useUpdateCustomerDataMutation>;
 export type UpdateCustomerDataMutationResult = Apollo.MutationResult<UpdateCustomerDataMutation>;
-export type UpdateCustomerDataMutationOptions = Apollo.BaseMutationOptions<UpdateCustomerDataMutation, UpdateCustomerDataMutationVariables>;
+export type UpdateCustomerDataMutationOptions = Apollo.BaseMutationOptions<
+  UpdateCustomerDataMutation,
+  UpdateCustomerDataMutationVariables
+>;

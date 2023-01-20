@@ -12,12 +12,14 @@ export const LoginPage = () => {
   const [sendPhoneNumber] = useCustomerLoginLazyQuery({
     fetchPolicy: 'network-only',
   });
+
   const [sendPhoneWithCode] = useCustomerVerifyCodeLazyQuery({
     fetchPolicy: 'network-only',
   });
 
   const onFirstStepCallback = async (phoneNumber: string) => {
     const queryResult = await sendPhoneNumber({ variables: { phoneNumber } });
+    console.log("🚀 ~ file: login.page.tsx:21 ~ onFirstStepCallback ~ queryResult", queryResult)
     
     validateApolloResponse(queryResult);
   };
