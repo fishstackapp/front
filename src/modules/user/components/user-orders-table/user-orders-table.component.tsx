@@ -81,18 +81,18 @@ export const UserOrdersTable: FC<UserOrdersTableProps> = ({ data, orderStatus, p
           ))}
         </tbody>
       </table>
-      {/* <div className="block px-6 sm:hidden">
-          {table.getRowModel().rows.map(row => (
-            <ul key={row.id} className="border-b py-4 first-of-type:pt-0 last-of-type:border-0">
-              {row.getVisibleCells().map(cell => (
-                <li key={cell.id}>
-                  <span className="font-bold">{cell.column.columnDef.header?.toString()}:</span>{' '}
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div> */}
+      <div className="block px-6 sm:hidden">
+        {table.getRowModel().rows.map(row => (
+          <ul key={row.id} className="border-b py-4 first-of-type:pt-0 last-of-type:border-0">
+            {row.getVisibleCells().map(cell => (
+              <li key={cell.id}>
+                <span className="font-semibold">{cell.column.columnDef.header?.toString()}: </span>{' '}
+                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              </li>
+            ))}
+          </ul>
+        ))}
+      </div>
     </>
   );
 };

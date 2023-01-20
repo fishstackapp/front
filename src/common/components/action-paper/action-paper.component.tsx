@@ -26,7 +26,7 @@ export const ActionPaper: FC<PropsWithChildren<ActionPaperProps>> = ({
   return (
     <div className="shadow rounded-md bg-white">
       <div className={wrapperClasses}>
-        <div className="text-lg font-medium text-gray-900 mb-6 pt-6 px-6">
+        <div className="text-base sm:text-lg font-medium text-gray-900 mb-6 pt-6 px-6">
           {title}
         </div>
         <div className={bodyClasses}>{children}</div>

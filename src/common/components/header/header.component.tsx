@@ -60,11 +60,11 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
                       {category.title}
                     </HeaderCategoryLink>
                   ))}
-                  <button className="ml-auto sm:hidden" onClick={togleMenuOpened}>
-                    <Bars3Icon />
-                  </button>
                 </div>
               )}
+              <button className="ml-auto sm:hidden" onClick={togleMenuOpened}>
+                <Bars3Icon />
+              </button>
             </>
           )}
         </div>
@@ -88,11 +88,21 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
       </div>
       <div className={mobileMenuClasses}>
         <ul>
-          <li>
-            <Link to="/login" className="block w-full border-b py-2" onClick={closeMenu}>
-              Війти
-            </Link>
-          </li>
+          {isLogin ? (
+            <>
+              <li>
+                <Link to="/profile" className="block w-full border-b py-2" onClick={closeMenu}>
+                  Ваш профіль
+                </Link>
+              </li>
+            </>
+          ) : (
+            <li>
+              <Link to="/login" className="block w-full border-b py-2" onClick={closeMenu}>
+                Війти
+              </Link>
+            </li>
+          )}
           <li>
             <Link to="/chekout" className="block w-full border-b py-2" onClick={closeMenu}>
               До корзини

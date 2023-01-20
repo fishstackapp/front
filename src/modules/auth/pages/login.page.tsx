@@ -19,8 +19,6 @@ export const LoginPage = () => {
 
   const onFirstStepCallback = async (phoneNumber: string) => {
     const queryResult = await sendPhoneNumber({ variables: { phoneNumber } });
-    console.log("🚀 ~ file: login.page.tsx:21 ~ onFirstStepCallback ~ queryResult", queryResult)
-    
     validateApolloResponse(queryResult);
   };
 

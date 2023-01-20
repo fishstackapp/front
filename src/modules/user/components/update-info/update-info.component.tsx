@@ -42,8 +42,8 @@ export const UpdateInfo: FC<UpdateInfoProps> = ({
       {isLoading ? (
         <UpdateInfoLoading/>
       ) : (
-        <form className="flex gap-9" onSubmit={onSubmit}>
-        <div className="w-1/2">
+        <form className="flex sm:gap-9 flex-col sm:flex-row" onSubmit={onSubmit}>
+        <div className="w-full sm:w-1/2">
           <Controller
             name="phoneNumber"
             control={control}
@@ -72,7 +72,7 @@ export const UpdateInfo: FC<UpdateInfoProps> = ({
             )}
           />
         </div>
-        <div className="w-1/2">
+        <div className="w-full sm:w-1/2">
           <Controller
             name="name"
             control={control}
