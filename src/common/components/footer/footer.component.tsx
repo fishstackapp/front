@@ -23,7 +23,7 @@ export const Footer = () => {
         {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
         <div className="flex flex-col items-center justify-center lg:mr-auto lg:ml-auto lg:items-start lg:justify-start">
           <div className="mb-4">
-            <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm">Приєднуйтесь</p>
+            <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm lg:text-base">Приєднуйтесь</p>
           </div>
           <div>
             <ul>
@@ -42,7 +42,7 @@ export const Footer = () => {
       {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
       <div className="flex w-full max-w-lg flex-col items-center justify-center lg:items-start lg:justify-start">
         <div className="mb-4">
-          <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm">
+          <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm lg:text-base">
             Підпишіться на розсилку
           </p>
         </div>
