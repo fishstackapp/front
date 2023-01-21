@@ -9,7 +9,7 @@ interface InputProps {
   name?: ComponentProps<'input'>['name'];
   disabled?: ComponentProps<'input'>['disabled'];
   type?: ComponentProps<'input'>['type'];
-  label: string;
+  label?: string;
   placeholder: string;
   error?: string;
   fullWidth?: boolean;

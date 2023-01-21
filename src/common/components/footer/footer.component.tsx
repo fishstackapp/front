@@ -1,29 +1,62 @@
 import { FooterLink } from '../footer-link/footer-link.component';
+import { Logo } from '../logo/logo.component';
+import { ReactComponent as InstaIcon } from '@app/assets/icons/instagram.svg';
+import { ReactComponent as SubmitIcon } from '@app/assets/icons/submit.svg';
+import { Input } from '../input/input.component';
+import { Button } from '../button/button.component';
 
 export const Footer = () => {
   return (
-    <div className="bg-gray-900 p-12 mt-auto">
-      <div>
-        <div className="mb-4">
-          <span className="uppercase font-bold text-sm text-zinc-500">
-            Контакти
-          </span>
+    <footer className="mt-auto flex flex-col items-center justify-center gap-4 bg-gray-900 p-8 sm:justify-between sm:gap-8 sm:p-12 lg:flex-row  lg:items-start lg:justify-start">
+      <div className="w-full sm:flex sm:justify-around">
+        <div className="flex flex-col items-center justify-center">
+          <Logo footer />
+          <div className="mb-4 mt-6">
+            <ul className="flex flex-col items-center justify-center gap-2">
+              <FooterLink href="tel:+380680707657">068 07 07 657</FooterLink>
+              <FooterLink href="mailto:fishstackonline@gmail.com">
+                fishstackonline@gmail.com
+              </FooterLink>
+            </ul>
+          </div>
         </div>
-        <div className="mb-8">
-          <ul>
-            <FooterLink href="tel:+380441234567">044 123 45 67</FooterLink>
-            <FooterLink href="mailto:info@fishstack.app">
-              info@fishstack.app
-            </FooterLink>
-          </ul>
-        </div>
-        <hr className="relative left-[-3rem] w-[calc(100%_+_6rem)] border-zinc-500 mb-8" />
-        <div>
-          <span className="text-xl font-semibold text-white">
-          🐟 FishStack
-          </span>
+        {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
+        <div className="flex flex-col items-center justify-center lg:items-start lg:justify-start">
+          <div className="mb-4">
+            <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm">Приєднуйтесь</p>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <a
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 transition-all hover:bg-blue-500"
+                  href="/"
+                >
+                  <InstaIcon className="h-6 w-6 child-path:fill-white" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  )
+      {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
+      <div className="flex w-full flex-col items-center justify-center lg:items-start lg:justify-start">
+        <div className="mb-4">
+          <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm">
+            Підписка на розсилку
+          </p>
+        </div>
+        <div className="flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-between lg:gap-3 w-full">
+          <div className='lg:w-full'>
+          <Input placeholder="E-mail" fullWidth disabled />
+          </div>
+          <div className="lg:mt-1">
+            <Button>
+              Підписатись <SubmitIcon width="2" className="h-6 w-6 child-path:fill-white" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };

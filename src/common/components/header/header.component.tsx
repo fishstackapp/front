@@ -10,6 +10,7 @@ import { ReactComponent as ShoppingCartSolidIcon } from '@app/assets/icons/shopp
 import { ReactComponent as Bars3Icon } from '@app/assets/icons/bars-3.svg';
 import { useAuthState } from '@app/modules/auth/hooks/use-auth-state';
 import { MobileMenu } from '../mobile-menu/mobile-menu.component';
+import { Logo } from '../logo/logo.component';
 
 interface HeaderProps {
   isLoading?: boolean;
@@ -28,12 +29,10 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
   const togleMenuOpened = () => setIsMenuOpened(v => !v);
 
   return (
-    <>
+    <header>
       <div className="fixed z-20 mb-6 flex h-12 w-full items-center justify-between bg-white px-2 shadow sm:mb-12 sm:px-6">
         <div className="flex h-full flex-1 items-center gap-3">
-          <Link to="/" className="text-s font-semibold sm:text-xl">
-            🐟 FishStack
-          </Link>
+          <Logo/>
           {isLoading ? (
             <>
               <div className="h-6 w-px bg-gray-200" />
@@ -81,6 +80,6 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
         </div>
       </div>
       <MobileMenu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened}/>
-    </>
+    </header>
   );
 };
