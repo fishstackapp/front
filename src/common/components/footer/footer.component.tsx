@@ -21,8 +21,8 @@ export const Footer = () => {
           </div>
         </div>
         {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
-        <div className="flex flex-col items-center justify-center lg:mr-auto lg:ml-auto lg:items-start lg:justify-start">
-          <div className="mb-2">
+        <div className="flex flex-col items-center justify-center  sm:justify-start lg:mr-auto lg:ml-auto lg:justify-start">
+          <div className="mb-2 sm:mb-6">
             <p className="text-base font-bold uppercase text-zinc-500 sm:text-base">Приєднуйтесь</p>
           </div>
           <div>
