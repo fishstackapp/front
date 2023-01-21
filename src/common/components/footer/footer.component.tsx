@@ -7,8 +7,8 @@ import { Button } from '../button/button.component';
 
 export const Footer = () => {
   return (
-    <footer className="mt-auto flex flex-col items-center justify-center gap-4 bg-gray-900 p-8 sm:justify-between sm:gap-8 sm:p-12 lg:flex-row  lg:items-start lg:justify-start">
-      <div className="w-full sm:flex sm:justify-around">
+    <footer className="mt-auto flex flex-col items-center justify-center gap-4 bg-gray-900 p-8 sm:justify-between sm:gap-8 sm:p-12 lg:flex-row lg:items-start lg:justify-start lg:gap-0 lg:px-20">
+      <div className="w-full sm:flex sm:justify-around lg:justify-between">
         <div className="flex flex-col items-center justify-center">
           <Logo footer />
           <div className="mb-4 mt-6">
@@ -21,7 +21,7 @@ export const Footer = () => {
           </div>
         </div>
         {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
-        <div className="flex flex-col items-center justify-center lg:items-start lg:justify-start">
+        <div className="flex flex-col items-center justify-center lg:mr-auto lg:ml-auto lg:items-start lg:justify-start">
           <div className="mb-4">
             <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm">Приєднуйтесь</p>
           </div>
@@ -40,15 +40,15 @@ export const Footer = () => {
         </div>
       </div>
       {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
-      <div className="flex w-full flex-col items-center justify-center lg:items-start lg:justify-start">
+      <div className="flex w-full max-w-lg flex-col items-center justify-center lg:items-start lg:justify-start">
         <div className="mb-4">
           <p className="text-base font-bold uppercase text-zinc-500 sm:text-sm">
-            Підписка на розсилку
+            Підпишіться на розсилку
           </p>
         </div>
-        <div className="flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-between lg:gap-3 w-full">
-          <div className='lg:w-full'>
-          <Input placeholder="E-mail" fullWidth disabled />
+        <div className="flex w-full flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-around lg:gap-3">
+          <div className="lg:w-full">
+            <Input placeholder="E-mail" type="email" fullWidth />
           </div>
           <div className="lg:mt-1">
             <Button>
