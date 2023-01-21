@@ -28,9 +28,9 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   disabled,
   ...props
 }) => {
-  const buttonClasses = clsx('text-sm text-gray-900 px-4 border rounded-md transition-all', {
+  const buttonClasses = clsx('flex items-center justify-center gap-1 text-sm text-gray-900 px-4 border rounded-md transition-all', {
     'w-full': fullWidth,
-    'py-2': size === ButtonSize.base,
+    'py-1.5': size === ButtonSize.base,
     'py-0.5': size === ButtonSize.sm,
     'opacity-50 cursor-not-allowed': disabled,
     'bg-blue-400 border-blue-400 hover:bg-blue-500 hover:border-blue-500 disabled:hover:border-blue-400 disabled:hover:bg-blue-400 text-white':
