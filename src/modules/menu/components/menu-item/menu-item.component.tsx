@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import clsx from 'clsx';
-
+import { toast } from 'react-toastify';
 import { AdvancedImage } from '@cloudinary/react';
 import { useCloudinaryImage } from '@app/common/hooks/use-cloudinary-image.hooks';
 import { Button } from '@app/common/components/button/button.component';
@@ -40,6 +40,8 @@ export const MenuItem: FC<MenuItemProps> = ({
 
   const handleAddToCart = () => {
     addItemsToCart(fishId);
+
+    toast.success(`${title} додано до корзини`)
   };
 
   return (

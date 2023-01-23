@@ -8,11 +8,10 @@ import { CheckoutFormProps } from './checkout-form.types';
 import { useCheckoutForm } from './use-checkout-form';
 import { Payment_Types_Enum } from '@app/core/types';
 
-
 const paymentTypeOptions = [
-  { label: 'Картка', value: Payment_Types_Enum.Card },
-  { label: 'Готівка', value: Payment_Types_Enum.Cash },
-  { label: 'Онлайн', value: Payment_Types_Enum.Online },
+  { label: 'При отриманні', value: Payment_Types_Enum.Card },
+  // { label: 'Готівка', value: Payment_Types_Enum.Cash },
+  { label: "Онлайн", value: Payment_Types_Enum.Online },
 ];
 
 export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValues}) => {
@@ -36,7 +35,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
             {...field}
             fullWidth
             label="Ім'я"
-            placeholder="Введіть ваше ім'я"
+            placeholder="Ваше ім'я"
             error={fieldState.error?.message}
           />
         )}
@@ -49,7 +48,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
             {...field}
             fullWidth
             label="Телефон"
-            placeholder="Введіть ваш телефон"
+            placeholder="Ваш телефон"
             error={fieldState.error?.message}
           />
         )}
@@ -62,7 +61,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
             {...field}
             fullWidth
             label="Адреса"
-            placeholder="Введіть вашу адресу"
+            placeholder="Ваша адреса «Нова пошта»"
             error={fieldState.error?.message}
           />
         )}
@@ -75,7 +74,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
             {...field}
             fullWidth
             label="Коментар до замовлення"
-            placeholder="Введіть будь-яку корисну інформацію"
+            placeholder="Будь-яка корисна інформація"
           />
         )}
       />

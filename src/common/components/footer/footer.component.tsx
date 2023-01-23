@@ -1,11 +1,13 @@
 import { FooterLink } from '../footer-link/footer-link.component';
 import { Logo } from '../logo/logo.component';
 import { ReactComponent as InstaIcon } from '@app/assets/icons/instagram.svg';
+import { ReactComponent as TelegramIcon } from '@app/assets/icons/telegram.svg';
 import { ReactComponent as SubmitIcon } from '@app/assets/icons/submit.svg';
 import { Input } from '../input/input.component';
 import { Button } from '../button/button.component';
 
 export const Footer = () => {
+  const dynamicLink = "_blank";
   return (
     <footer className="mt-auto flex flex-col items-center justify-center gap-6 bg-gray-900 p-8 sm:justify-between sm:gap-8 sm:p-12 lg:flex-row lg:items-start lg:justify-start lg:gap-0 lg:px-20">
       <div className="w-full sm:flex sm:justify-around lg:justify-between">
@@ -20,29 +22,39 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
-        {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
+
         <div className="flex flex-col items-center justify-center  sm:justify-start lg:mr-auto lg:ml-auto lg:justify-start">
           <div className="mb-2 sm:mb-6">
-            <p className="text-base font-bold uppercase text-zinc-500 sm:text-base">Приєднуйтесь</p>
+            <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">Приєднуйтесь</p>
           </div>
           <div>
-            <ul>
+            <ul className='flex gap-4'>
               <li>
                 <a
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 transition-all hover:bg-blue-500"
-                  href="/"
+                  href="https://instagram.com/fishstack.online?igshid=YmMyMTA2M2Y="
+                  target={dynamicLink}
                 >
                   <InstaIcon className="h-6 w-6 child-path:fill-white" />
+                </a>
+              </li>
+              <li>
+                <a
+                  className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 transition-all hover:bg-blue-500"
+                  href="https://t.me/fishstack"
+                  target={dynamicLink}
+                >
+                  <TelegramIcon className="h-6 w-6 child-path:fill-white" />
                 </a>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      {/* <hr className="relative left-[-3rem] mb-8 w-[calc(100%_+_6rem)] border-zinc-500" /> */}
+
       <div className="flex w-full max-w-lg flex-col items-center justify-center lg:items-start lg:justify-start">
         <div className="mb-2">
-          <p className="text-base font-bold uppercase text-zinc-500 sm:text-base">
+          <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">
             Підпишіться на розсилку
           </p>
         </div>
