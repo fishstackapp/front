@@ -15,7 +15,7 @@ const generateValidationSchema = (step: LoginFormStepKeys) => {
       .string()
       .trim()
       .matches(phoneRegexp, 'Введіть коректний номер телефону')
-      .required('Введіть номер телефону'),
+      .required('Ваш телефон +380...'),
   };
 
   if (step === LoginFormStep.first) {

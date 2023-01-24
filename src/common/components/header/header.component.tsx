@@ -4,7 +4,7 @@ import { UserDropdown } from '@app/modules/auth/components/user-dropdown/user-dr
 import { Button } from '../button/button.component';
 import { Skeleton } from '../skeleton/skeleton.component';
 import { Link, useLocation } from 'react-router-dom';
-import { HeaderCategoryLink } from '../link/link.component';
+import { HeaderCategoryLink } from '../header-link/header-link.component';
 import { toggleCart } from '@app/modules/cart/store/cart-opened-state';
 import { ReactComponent as ShoppingCartSolidIcon } from '@app/assets/icons/shopping-cart-solid.svg';
 import { ReactComponent as Bars3Icon } from '@app/assets/icons/bars-3.svg';

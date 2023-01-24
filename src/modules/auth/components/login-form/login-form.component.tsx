@@ -45,7 +45,7 @@ export const LoginForm: FC<LoginFormProps> = ({
             render={({ field, fieldState }) => (
               <Input
                 label="Телефон"
-                placeholder="+380671111111"
+                placeholder="Ваш телефон +380..."
                 fullWidth
                 error={fieldState.error?.message}
                 disabled={step === LoginFormStep.second}

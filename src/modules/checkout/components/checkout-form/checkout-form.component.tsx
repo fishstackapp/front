@@ -48,7 +48,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
             {...field}
             fullWidth
             label="Телефон"
-            placeholder="Ваш телефон"
+            placeholder="Ваш телефон +380..."
             error={fieldState.error?.message}
           />
         )}

@@ -11,6 +11,7 @@ export const Logo: FC<PropsWithChildren<LogoProps>> = ({footer}) => {
     "text-white text-xl": footer,
   })
 
+
   return (
     <div>
       <Link to="/" className={classes}>
