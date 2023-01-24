@@ -11,7 +11,7 @@ import { Payment_Types_Enum } from '@app/core/types';
 const paymentTypeOptions = [
   { label: 'При отриманні', value: Payment_Types_Enum.Card },
   // { label: 'Готівка', value: Payment_Types_Enum.Cash },
-  { label: "Онлайн", value: Payment_Types_Enum.Online },
+  // { label: "Онлайн", value: Payment_Types_Enum.Online },
 ];
 
 export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValues}) => {
