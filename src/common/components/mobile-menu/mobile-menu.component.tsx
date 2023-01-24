@@ -10,25 +10,33 @@ interface MobileMenuProps {
 
 export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened }) => {
   const { isLoggedin, logout } = useAuthState();
-  
-  const mobileMenuClasses = clsx('text-lg text-center bg-white z-10 fixed w-full mt-12 h-full p-10 sm:hidden', {
-    hidden: !isMenuOpened,
-    block: isMenuOpened,
-  });
+
+  const mobileMenuClasses = clsx(
+    'text-lg text-center bg-white z-10 fixed w-full mt-12 h-full p-10 sm:hidden',
+    {
+      'hidden': !isMenuOpened,
+      'block overflow-hidden': isMenuOpened,
+    }
+  );
 
   const closeMenu = () => setIsMenuOpened(false);
 
   const handleLogout = () => {
     closeMenu();
     logout();
-  }
+  };
 
   return (
     <div className={mobileMenuClasses}>
       <ul>
         <li>
+          <Link to="/" className="block w-full border-b py-4" onClick={closeMenu}>
+            На головну
+          </Link>
+        </li>
+        <li>
           <Link to="/checkout" className="block w-full border-b py-4" onClick={closeMenu}>
-            До корзини
+            До кошика
           </Link>
         </li>
         {isLoggedin ? (

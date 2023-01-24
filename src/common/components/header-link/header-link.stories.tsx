@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { HeaderCategoryLink } from './link.component';
+import { HeaderCategoryLink } from './header-link.component';
 
 export default {
   title: 'Common/Link',
