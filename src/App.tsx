@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useGetCategoriesQuery } from './core/types';
 import { Header } from './common/components/header/header.component';
-import { Footer } from './common/components/footer/footer.component';
+import { Footer } from './modules/footer/components/footer.component';
 import { MenuPage } from './modules/menu/pages/menu.page';
 import { LoginPage } from './modules/auth/pages/login.page';
 import { ProfilePage } from './modules/user/pages/profile.page';
@@ -10,6 +10,7 @@ import { CartSidebar } from './modules/cart/components/cart-sidebar/cart-sidebar
 import { CheckoutPage } from './modules/checkout/pages/checkout.page';
 import { ThankYouPage } from './modules/checkout/pages/thank-you.page';
 import { useAuthState } from './modules/auth/hooks/use-auth-state';
+import { PaymentPage } from './modules/footer/pages/payment.page';
 
 export const App = () => {
   const { data, loading } = useGetCategoriesQuery();
@@ -32,6 +33,7 @@ export const App = () => {
               </PrivateRoute>
             }
           />
+          <Route path="/payment" element={<PaymentPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/checkout/thank-you" element={<ThankYouPage />} />
         </Routes>

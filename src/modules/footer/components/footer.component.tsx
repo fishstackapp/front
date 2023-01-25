@@ -1,24 +1,30 @@
-import { FooterLink } from '../footer-link/footer-link.component';
-import { Logo } from '../logo/logo.component';
+import { FooterLink } from '../../../common/components/footer-link/footer-link.component';
+import { Logo } from '../../../common/components/logo/logo.component';
 import { ReactComponent as InstaIcon } from '@app/assets/icons/instagram.svg';
 import { ReactComponent as TelegramIcon } from '@app/assets/icons/telegram.svg';
 import { ReactComponent as SubmitIcon } from '@app/assets/icons/submit.svg';
-import { Input } from '../input/input.component';
-import { Button } from '../button/button.component';
+import { Input } from '../../../common/components/input/input.component';
+import { Button } from '../../../common/components/button/button.component';
+import { FooterAboutUs } from '../../../common/components/footer-about-us/footer-about-us.component';
 
 export const Footer = () => {
-  const dynamicLink = "_blank";
+  const dynamicLink = '_blank';
   return (
     <footer className="mt-auto flex flex-col items-center justify-center gap-6 bg-gray-900 p-8 sm:justify-between sm:gap-8 sm:p-12 lg:flex-row lg:items-start lg:justify-start lg:gap-0 lg:px-20">
       <div className="w-full sm:flex sm:justify-around lg:justify-between">
-        <div className="flex flex-col items-center justify-center">
-          <Logo footer />
-          <div className="mb-6 mt-6">
-            <ul className="flex flex-col items-center justify-center gap-2">
-              <FooterLink href="tel:+380680707657">068 07 07 657</FooterLink>
+        <div className="flex flex-col items-center justify-center lg:flex-row lg:items-start lg:gap-6">
+          <div>
+            <Logo footer />
+          </div>
+          <div className="mb-6 mt-6 lg:m-0">
+            <ul className="flex flex-col items-center justify-center gap-2 lg:items-start">
+              <FooterLink href="tel:+380680707657">+38 068 07 07 657</FooterLink>
               <FooterLink href="mailto:fishstackonline@gmail.com">
                 fishstackonline@gmail.com
               </FooterLink>
+              <FooterAboutUs to="/payment">
+                Доставка та оплата
+              </FooterAboutUs>
             </ul>
           </div>
         </div>
@@ -28,7 +34,7 @@ export const Footer = () => {
             <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">Приєднуйтесь</p>
           </div>
           <div>
-            <ul className='flex gap-4'>
+            <ul className="flex gap-4">
               <li>
                 <a
                   className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 transition-all hover:bg-blue-500"
