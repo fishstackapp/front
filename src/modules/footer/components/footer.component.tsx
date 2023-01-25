@@ -22,9 +22,8 @@ export const Footer = () => {
               <FooterLink href="mailto:fishstackonline@gmail.com">
                 fishstackonline@gmail.com
               </FooterLink>
-              <FooterAboutUs to="/payment">
-                Доставка та оплата
-              </FooterAboutUs>
+              <FooterAboutUs to="/payment">Доставка та оплата</FooterAboutUs>
+              <FooterAboutUs to="/turning">Повернення та обмін</FooterAboutUs>
             </ul>
           </div>
         </div>
