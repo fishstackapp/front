@@ -11,6 +11,7 @@ import { CheckoutPage } from './modules/checkout/pages/checkout.page';
 import { ThankYouPage } from './modules/checkout/pages/thank-you.page';
 import { useAuthState } from './modules/auth/hooks/use-auth-state';
 import { PaymentPage } from './modules/footer/pages/payment.page';
+import { TurningPage } from './modules/footer/pages/turning.page';
 
 export const App = () => {
   const { data, loading } = useGetCategoriesQuery();
@@ -34,6 +35,7 @@ export const App = () => {
             }
           />
           <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/turning" element={<TurningPage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/checkout/thank-you" element={<ThankYouPage />} />
         </Routes>
