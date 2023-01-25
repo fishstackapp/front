@@ -19,7 +19,7 @@ export const PaymentPage = () => {
             Товар вирушає тричі на тиждень: понеділок середа та п’ятниця.
           </p>
           <p className="text-sm sm:text-lg font-normal text-gray-700 mb-4 sm:mb-6">
-            Прийом заявок здійснюється цілодобово
+            Прийом заявок здійснюється цілодобово.
           </p>
           <p className="text-sm sm:text-lg font-normal text-gray-700 mb-4 sm:mb-6">
             Підтвердження та відправка товару після уточнення менеджера по телефону.

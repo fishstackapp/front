@@ -32,19 +32,18 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
     <header>
       <div className="fixed z-20 mb-6 flex h-12 w-full items-center justify-between bg-white px-2 shadow sm:mb-12 sm:px-6">
         <div className="flex h-full flex-1 items-center gap-3">
-          <Logo/>
+          <Logo />
+          <div className="h-6 w-px bg-gray-200" />
           {isLoading ? (
             <>
-              <div className="h-6 w-px bg-gray-200" />
               <Skeleton width={34} height={19} />
               <Skeleton width={34} height={19} />
               <Skeleton width={34} height={19} />
             </>
           ) : (
             <>
-              {isHomePage && (
+              {isHomePage ? (
                 <div className="flex flex-1 items-center gap-3">
-                  <div className="h-6 w-px bg-gray-200" />
                   {categories?.map(category => (
                     <HeaderCategoryLink
                       url={`#${category.slug}`}
@@ -53,6 +52,12 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
                       {category.title}
                     </HeaderCategoryLink>
                   ))}
+                </div>
+              ) : (
+                <div className="relative text-sm font-semibold after:absolute after:block after:h-px after:w-full after:content-[''] hover:after:bg-blue-400 sm:text-base">
+                  <Link to="/">
+                    Головна
+                  </Link>
                 </div>
               )}
               <button className="ml-auto sm:hidden" onClick={togleMenuOpened}>
@@ -79,7 +84,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
           )}
         </div>
       </div>
-      <MobileMenu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened}/>
+      <MobileMenu isMenuOpened={isMenuOpened} setIsMenuOpened={setIsMenuOpened} />
     </header>
   );
 };
