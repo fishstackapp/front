@@ -10,9 +10,9 @@ import {Helmet} from 'react-helmet'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <ApolloProvider client={apolloClient}>
     <Helmet titleTemplate='%s 🐟 FishStack' defaultTitle='🐟 FishStack'/>
-    <ToastContainer />
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    <ToastContainer/>
   </ApolloProvider>
 );

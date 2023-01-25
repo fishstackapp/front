@@ -33,6 +33,7 @@ export const LoginPage = () => {
       login(queryResult.data.customerVerifyCode?.accessToken);
 
       navigate('/');
+
     }
   };
 

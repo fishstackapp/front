@@ -41,7 +41,7 @@ export const MenuItem: FC<MenuItemProps> = ({
   const handleAddToCart = () => {
     addItemsToCart(fishId);
 
-    toast.success(`${title} додано до корзини`)
+    toast.success(`${title} додано до кошика`, {autoClose: 1000})
   };
 
   return (

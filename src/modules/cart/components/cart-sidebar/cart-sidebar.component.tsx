@@ -52,7 +52,7 @@ export const CartSidebar: FC<CartSidebarProps> = () => {
         <div className="flex h-[calc(100%_-_3.25rem)] w-full items-center justify-center border-2 border-dashed border-gray-200">
           <div className="flex flex-col items-center">
             <CartIcon className="mb-4 h-28 w-28 child-path:fill-gray-400" />
-            <span className="text-lg font-medium text-gray-600">Кошик пустий</span>
+            <span className="text-lg font-medium text-gray-600">Кошик порожній</span>
           </div>
         </div>
       ) : (
