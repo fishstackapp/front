@@ -60,7 +60,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
                   </Link>
                 </div>
               )}
-              <button className="ml-auto sm:hidden" onClick={togleMenuOpened}>
+              <button aria-label='Bars' className="ml-auto sm:hidden" onClick={togleMenuOpened}>
                 <Bars3Icon />
               </button>
             </>
@@ -68,7 +68,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
         </div>
         <div className="hidden items-center gap-3 sm:flex">
           {!isCheckoutPage && (
-            <button onClick={toggleCart} id="shopping-cart-item sm:hidden">
+            <button aria-label='Shopping cart' onClick={toggleCart} id="shopping-cart-item sm:hidden">
               <ShoppingCartSolidIcon className="h-6 w-6 child-path:fill-gray-900" />
             </button>
           )}

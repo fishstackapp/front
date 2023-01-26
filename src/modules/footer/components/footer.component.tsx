@@ -11,7 +11,7 @@ export const Footer = () => {
   const dynamicLink = '_blank';
 
   return (
-    <footer className="mt-auto flex flex-col flex-wrap items-center justify-center gap-6 bg-gray-900  p-8 sm:flex-row sm:items-start sm:justify-between sm:gap-14 lg:justify-around">
+    <footer className="mt-auto flex flex-col flex-wrap items-center justify-center gap-6 bg-gray-800  p-8 sm:flex-row sm:items-start sm:justify-between sm:gap-14 lg:justify-around">
       <div className="text-center sm:text-start">
         <Logo footer />
         <ul className="mt-2 sm:text-start">
@@ -21,7 +21,7 @@ export const Footer = () => {
       </div>
 
       <div className="text-center sm:text-start">
-        <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">Про нас</p>
+        <p className="text-sm font-bold uppercase text-zinc-300 sm:text-base">Про нас</p>
         <ul className="mt-2">
           <FooterAboutUs to="/payment">Доставка та оплата</FooterAboutUs>
           <FooterAboutUs to="/contract">Публічна оферта</FooterAboutUs>
@@ -30,10 +30,11 @@ export const Footer = () => {
       </div>
 
       <div className="text-center">
-        <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">Приєднуйтесь</p>
+        <p className="text-sm font-bold uppercase text-zinc-300 sm:text-base">Приєднуйтесь</p>
         <ul className="mt-4 flex items-center justify-center gap-4">
           <li>
             <a
+              aria-label="Instagram icon"
               className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 transition-all hover:bg-blue-500"
               href="https://instagram.com/fishstack.online?igshid=YmMyMTA2M2Y="
               target={dynamicLink}
@@ -43,6 +44,7 @@ export const Footer = () => {
           </li>
           <li>
             <a
+              aria-label="Telegram icon"
               className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 transition-all hover:bg-blue-500"
               href="https://t.me/fishstack"
               target={dynamicLink}
@@ -54,7 +56,7 @@ export const Footer = () => {
       </div>
 
       <div className="mx-auto flex flex-col items-center gap-2 lg:mx-0">
-        <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">
+        <p className="text-sm font-bold uppercase text-zinc-300 sm:text-base">
           Підпишіться на розсилку
         </p>
         <div className="flex w-full flex-col items-center justify-center sm:flex-row sm:items-start sm:justify-around sm:gap-3">
