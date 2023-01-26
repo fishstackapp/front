@@ -11,7 +11,7 @@ export const Footer = () => {
   const dynamicLink = '_blank';
 
   return (
-    <footer className="flex flex-col flex-wrap items-center justify-center gap-6 bg-gray-900  p-8 sm:flex-row sm:items-start sm:justify-between sm:gap-14 lg:justify-around">
+    <footer className="mt-auto flex flex-col flex-wrap items-center justify-center gap-6 bg-gray-900  p-8 sm:flex-row sm:items-start sm:justify-between sm:gap-14 lg:justify-around">
       <div className="text-center sm:text-start">
         <Logo footer />
         <ul className="mt-2 sm:text-start">
