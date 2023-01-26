@@ -11,26 +11,27 @@ export const Footer = () => {
   const dynamicLink = '_blank';
 
   return (
-    <footer className="mt-auto flex flex-col flex-wrap items-center justify-center gap-6 bg-gray-900  p-8 sm:flex-row sm:justify-between sm:gap-14">
-      <div className="flex flex-col items-center gap-2 sm:items-start">
+    <footer className="flex flex-col flex-wrap items-center justify-center gap-6 bg-gray-900  p-8 sm:flex-row sm:items-start sm:justify-between sm:gap-14 lg:justify-around">
+      <div className="text-center sm:text-start">
         <Logo footer />
-        <ul className="text-center sm:text-start">
+        <ul className="mt-2 sm:text-start">
           <FooterLink href="tel:+380680707657">+38 068 07 07 657</FooterLink>
           <FooterLink href="mailto:fishstackonline@gmail.com">fishstackonline@gmail.com</FooterLink>
         </ul>
       </div>
 
-      <div className="flex flex-col items-center gap-2 sm:items-start">
+      <div className="text-center sm:text-start">
         <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">Про нас</p>
-        <ul className="text-center sm:text-start">
+        <ul className="mt-2">
           <FooterAboutUs to="/payment">Доставка та оплата</FooterAboutUs>
+          <FooterAboutUs to="/contract">Публічна оферта</FooterAboutUs>
           <FooterAboutUs to="/turning">Повернення та обмін</FooterAboutUs>
         </ul>
       </div>
 
-      <div className="flex flex-col items-center gap-2">
+      <div className="text-center">
         <p className="text-sm font-bold uppercase text-zinc-500 sm:text-base">Приєднуйтесь</p>
-        <ul className="flex items-center justify-center gap-4">
+        <ul className="mt-4 flex items-center justify-center gap-4">
           <li>
             <a
               className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-700 transition-all hover:bg-blue-500"
