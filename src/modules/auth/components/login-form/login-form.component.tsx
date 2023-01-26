@@ -69,7 +69,7 @@ export const LoginForm: FC<LoginFormProps> = ({
               )}
             />
           )}
-          <div className="text-center">
+          <div className="text-center mx-auto">
             <Button type="submit" disabled={isSubmitting}>
               {step === LoginFormStep.first ? 'Отримати код' : 'Війти'}
             </Button>

@@ -11,11 +11,16 @@ export const Logo: FC<PropsWithChildren<LogoProps>> = ({footer}) => {
     "text-white text-xl": footer,
   })
 
+  const spanClasses = clsx({
+    "text-blue-400": footer,
+    "text-blue-600": !footer
+  })
+
 
   return (
     <div>
       <Link to="/" className={classes}>
-        🐟 <span className='text-blue-500'>Fish</span>Stack
+        🐟 <span className={spanClasses}>Fish</span>Stack
       </Link>
     </div>
   );

@@ -33,14 +33,14 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     'py-1.5': size === ButtonSize.base,
     'py-0.5': size === ButtonSize.sm,
     'opacity-50 cursor-not-allowed': disabled,
-    'bg-blue-400 border-blue-400 hover:bg-blue-500 hover:border-blue-500 disabled:hover:border-blue-400 disabled:hover:bg-blue-400 text-white':
+    'bg-blue-600 border-blue-600 hover:bg-blue-500 hover:border-blue-500 disabled:hover:border-blue-500 disabled:hover:bg-blue-500 text-white':
       variant === ButtonVariant.primary,
     'bg-red-400 border-red-400 hover:bg-red-500 hover:border-red-500 disabled:hover:border-red-400 disabled:hover:bg-red-400':
       variant === ButtonVariant.danger,
   });
 
   return (
-    <button className={buttonClasses} disabled={disabled} {...props}>
+    <button title="Title" aria-label="Like" aria-labelledby="on" className={buttonClasses} disabled={disabled} {...props}>
       {children}
     </button>
   );

@@ -47,7 +47,7 @@ export const MenuItem: FC<MenuItemProps> = ({
   return (
     <div className="w-72 lg:w-96 rounded-2xl bg-white shadow-xl flex flex-col">
       <div className="relative">
-        <AdvancedImage cldImg={imageCld} width={384} height={240} className="rounded-t-2xl" />
+        <AdvancedImage alt="fish" cldImg={imageCld} width={384} height={240} className="rounded-t-2xl" />
         {weight && (
           <span className="absolute bottom-1.5 right-3 rounded-[2rem] bg-gray-900/50 px-2 text-sm text-white">
             {weight} г
