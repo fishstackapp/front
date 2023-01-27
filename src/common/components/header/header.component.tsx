@@ -11,6 +11,7 @@ import { ReactComponent as Bars3Icon } from '@app/assets/icons/bars-3.svg';
 import { useAuthState } from '@app/modules/auth/hooks/use-auth-state';
 import { MobileMenu } from '../mobile-menu/mobile-menu.component';
 import { Logo } from '../logo/logo.component';
+import { ReactClock } from '../react-clock/react-clock.component';
 
 interface HeaderProps {
   isLoading?: boolean;
@@ -42,7 +43,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
             </>
           ) : (
             <>
-              {isHomePage ? (
+              {isHomePage && !isMenuOpened && (
                 <div className="flex flex-1 items-center gap-3">
                   {categories?.map(category => (
                     <HeaderCategoryLink
@@ -53,14 +54,14 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
                     </HeaderCategoryLink>
                   ))}
                 </div>
-              ) : (
+              )}
+              {!isHomePage && !isMenuOpened  &&(
                 <div className="relative text-sm font-semibold after:absolute after:block after:h-px after:w-full after:content-[''] hover:after:bg-blue-400 sm:text-base">
-                  <Link to="/">
-                    Головна
-                  </Link>
+                  <Link to="/">Головна</Link>
                 </div>
               )}
-              <button aria-label='Bars' className="ml-auto sm:hidden" onClick={togleMenuOpened}>
+              {isMenuOpened && <ReactClock/>}
+              <button aria-label="Bars" className="ml-auto sm:hidden" onClick={togleMenuOpened}>
                 <Bars3Icon />
               </button>
             </>
@@ -68,7 +69,11 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
         </div>
         <div className="hidden items-center gap-3 sm:flex">
           {!isCheckoutPage && (
-            <button aria-label='Shopping cart' onClick={toggleCart} id="shopping-cart-item sm:hidden">
+            <button
+              aria-label="Shopping cart"
+              onClick={toggleCart}
+              id="shopping-cart-item sm:hidden"
+            >
               <ShoppingCartSolidIcon className="h-6 w-6 child-path:fill-gray-900" />
             </button>
           )}
