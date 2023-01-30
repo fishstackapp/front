@@ -25,9 +25,9 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
   const isHomePage = location.pathname === '/';
   const isLoginPage = location.pathname === '/login';
   const isCheckoutPage = location.pathname === '/checkout';
-
+  
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const togleMenuOpened = () => setIsMenuOpened(v => !v);
+  const togleMenuOpened = () => setIsMenuOpened(p => !p)
 
   return (
     <header>

@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { useAuthState } from '@app/modules/auth/hooks/use-auth-state';
+import { toast } from 'react-toastify';
 
 interface MobileMenuProps {
   isMenuOpened: boolean;
@@ -24,6 +25,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened 
   const handleLogout = () => {
     closeMenu();
     logout();
+    toast.success('Нам дуже прикро, що Ви покидаєте нас 😥', {autoClose: 2000});
   };
 
   return (

@@ -1,6 +1,7 @@
 import { ReactComponent as UserSolidIcon } from '@app/assets/icons/user-solid.svg';
 import { useOnClickOutside } from '@app/common/hooks/use-on-click-outside.hook';
 import { FC, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 import { useAuthState } from '../../hooks/use-auth-state';
 import { UserDropdownLink } from '../user-dropdown-link/user-dropdown-link.component';
 
@@ -24,6 +25,7 @@ export const UserDropdown: FC<UserDropdownProps> = () => {
   const handleLogout = () => {
     toggleDropDownState();
     logout()
+    toast.success('Нам дуже прикро, що Ви покидаєте нас 😥', {autoClose: 2000});
   };
 
   return (
