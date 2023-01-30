@@ -19,7 +19,6 @@ export const CartList: FC<CartListProps> = ({
   scrollDisabled = false,
   cartSumItemPosition = CartSumItemPosition.bottom,
 }) => {
-  // const cartItems = useReactiveVar(cartState);
   const { data, previousData, loading, cartItems } = useCartItems();
 
   if (!data && !previousData && loading) {

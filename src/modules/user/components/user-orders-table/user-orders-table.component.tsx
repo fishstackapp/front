@@ -55,6 +55,7 @@ export const UserOrdersTable: FC<UserOrdersTableProps> = ({ data, orderStatus, p
 
   return (
     <>
+      <div className='overflow-y-auto max-h-112'>
       <table className="hidden w-full sm:table">
         <thead className="border-t border-b border-gray-200 bg-gray-50 text-gray-900">
           {table.getHeaderGroups().map(headerGroup => (
@@ -81,7 +82,8 @@ export const UserOrdersTable: FC<UserOrdersTableProps> = ({ data, orderStatus, p
           ))}
         </tbody>
       </table>
-      <div className="block px-6 sm:hidden">
+      </div>
+      <div className="block px-6 sm:hidden overflow-y-auto max-h-112">
         {table.getRowModel().rows.map(row => (
           <ul key={row.id} className="border-b py-4 first-of-type:pt-0 last-of-type:border-0">
             {row.getVisibleCells().map(cell => (
