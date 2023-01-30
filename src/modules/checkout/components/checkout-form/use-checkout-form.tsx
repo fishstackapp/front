@@ -1,4 +1,5 @@
 import * as yup from 'yup';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { Payment_Types_Enum } from '@app/core/types';
@@ -27,6 +28,8 @@ export const validation = yup.object({
 });
 
 export const useCheckoutForm = (options?: useCheckoutFormOptions) => {
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
   const { control, handleSubmit, reset } = useForm<CheckoutFormValues>({
     resolver: yupResolver(validation),
     defaultValues: {
@@ -40,6 +43,7 @@ export const useCheckoutForm = (options?: useCheckoutFormOptions) => {
 
   const submitForm = async (values: CheckoutFormValues) => {
     if (options?.callback) {
+      setButtonDisabled(true);
       try {
         await options?.callback(values);
         toast.success('Замовлення створене!');
@@ -51,5 +55,5 @@ export const useCheckoutForm = (options?: useCheckoutFormOptions) => {
 
   const onSubmit = handleSubmit(submitForm);
 
-  return { control, onSubmit, reset };
+  return { control, onSubmit, reset, buttonDisabled };
 };

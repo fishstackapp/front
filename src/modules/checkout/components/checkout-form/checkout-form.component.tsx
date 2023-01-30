@@ -15,7 +15,7 @@ const paymentTypeOptions = [
 ];
 
 export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValues}) => {
-  const {control, onSubmit, reset} = useCheckoutForm({callback: submitCallback})
+  const {control, onSubmit, reset, buttonDisabled} = useCheckoutForm({callback: submitCallback})
 
   useEffect(() => {
     reset({
@@ -85,7 +85,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
           <RadioGroup options={paymentTypeOptions} label="Виберіть спосіб оплати" {...field} />
         )}
       />
-      <Button type="submit" fullWidth>
+      <Button type="submit" fullWidth disabled={buttonDisabled}>
         Підтвердити замовлення
       </Button>
     </form>
