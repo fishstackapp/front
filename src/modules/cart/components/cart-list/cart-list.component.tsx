@@ -19,7 +19,6 @@ export const CartList: FC<CartListProps> = ({
   scrollDisabled = false,
   cartSumItemPosition = CartSumItemPosition.bottom,
 }) => {
-  // const cartItems = useReactiveVar(cartState);
   const { data, previousData, loading, cartItems } = useCartItems();
 
   if (!data && !previousData && loading) {
@@ -31,7 +30,7 @@ export const CartList: FC<CartListProps> = ({
       return acc + el.price * cartItems[el.id];
     }, 0) ?? 0;
 
-  const wrapperClasses = clsx('flex flex-col gap-6', {
+  const wrapperClasses = clsx('flex flex-col gap-6 w-full', {
     'h-[calc(100%_-_3.25rem)]': !scrollDisabled,
   });
 

@@ -54,10 +54,10 @@ export const MenuItem: FC<MenuItemProps> = ({
           </span>
         )}
       </div>
-      <div className="flex flex-col flex-1 justify-between p-4 sm:p-8 h-[calc(100%_-_15rem)]">
+      <div className="flex flex-col flex-1 justify-between p-4 sm:p-6 h-[calc(100%_-_15rem)]">
         <div>
           <h2 className={titleClasses}>{title}</h2>
-          {descriptions && <p className="mb-4 sm:mb-8 text-sm sm:text-base">{descriptions}</p>}
+          {descriptions && <p className="mb-4 text-sm sm:text-base">{descriptions}</p>}
         </div>
         <div className="flex items-center justify-between flex-col gap-3 sm:flex-row">
           <span className="text-xl font-semibold w-full sm:w-1/2 ">{price} грн.</span>

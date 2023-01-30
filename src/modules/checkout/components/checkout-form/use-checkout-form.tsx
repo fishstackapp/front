@@ -1,19 +1,26 @@
 import * as yup from 'yup';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { Payment_Types_Enum } from '@app/core/types';
-import { phoneRegexp } from '@app/common/utils/regex';
+import { phoneRegexp, addressRegexp, nameRegexp } from '@app/common/utils/regex';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { CheckoutFormValues, useCheckoutFormOptions } from './checkout-form.types';
 
 export const validation = yup.object({
-  name: yup.string().required("Поле обов'язкове!"),
+  name: yup
+    .string()
+    .required("Поле обов'язкове!")
+    .matches(nameRegexp, "Введіть коректне им`я. Приклад: Володимир"),
   phoneNumber: yup
     .string()
     .trim()
-    .matches(phoneRegexp, 'Введіть коректний номер телефону')
-    .required('Введіть номер телефону'),
-  address: yup.string().required("Поле обов'язкове!"),
+    .required("Поле обов'язкове!")
+    .matches(phoneRegexp, 'Введіть коректний номер телефону. Приклад: +380681234567'),
+  address: yup
+    .string()
+    .required("Поле обов'язкове!")
+    .matches(addressRegexp, 'Введіть коректну адресу. Приклад: Дніпро, 23'),
   comment: yup.string().notRequired(),
   paymentType: yup
     .string()
@@ -21,6 +28,8 @@ export const validation = yup.object({
 });
 
 export const useCheckoutForm = (options?: useCheckoutFormOptions) => {
+  const [buttonDisabled, setButtonDisabled] = useState(false);
+
   const { control, handleSubmit, reset } = useForm<CheckoutFormValues>({
     resolver: yupResolver(validation),
     defaultValues: {
@@ -34,6 +43,7 @@ export const useCheckoutForm = (options?: useCheckoutFormOptions) => {
 
   const submitForm = async (values: CheckoutFormValues) => {
     if (options?.callback) {
+      setButtonDisabled(true);
       try {
         await options?.callback(values);
         toast.success('Замовлення створене!');
@@ -45,5 +55,5 @@ export const useCheckoutForm = (options?: useCheckoutFormOptions) => {
 
   const onSubmit = handleSubmit(submitForm);
 
-  return { control, onSubmit, reset };
+  return { control, onSubmit, reset, buttonDisabled };
 };

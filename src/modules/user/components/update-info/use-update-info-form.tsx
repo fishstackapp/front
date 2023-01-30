@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import { phoneRegexp, minSymbolsRegexp } from '@app/common/utils/regex';
+import { phoneRegexp, nameRegexp, addressRegexp } from '@app/common/utils/regex';
 import { useForm } from 'react-hook-form';
 import { UpdateInfoFormValues } from './update-info.types';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -7,19 +7,19 @@ import { FrontCustomer } from '../../types/user';
 import { toast } from 'react-toastify';
 
 const validationSchema = yup.object({
+  name: yup
+    .string()
+    .required("Поле обов'язкове!")
+    .matches(nameRegexp, "Введіть коректне им`я. Приклад: Володимир"),
   phoneNumber: yup
     .string()
     .trim()
-    .matches(phoneRegexp, 'Введіть коректний номер телефону')
-    .required('Введіть номер телефону'),
-  name: yup.string().matches(minSymbolsRegexp, {
-    excludeEmptyString: true,
-    message: 'Введіть мінімум 3 символи!',
-  }),
-  address: yup.string().matches(minSymbolsRegexp, {
-    excludeEmptyString: true,
-    message: 'Введіть мінімум 3 символи!',
-  }),
+    .required("Поле обов'язкове!")
+    .matches(phoneRegexp, 'Введіть коректний номер телефону. Приклад: +380681234567'),
+  address: yup
+    .string()
+    .required("Поле обов'язкове!")
+    .matches(addressRegexp, 'Введіть коректну адресу. Приклад: Дніпро, 23'),
 });
 
 export const UseUpdateInfoForm = (

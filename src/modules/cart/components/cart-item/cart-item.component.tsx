@@ -14,7 +14,7 @@ interface CartItemProps {
 }
 
 export const CartItem: FC<CartItemProps> = ({ image, title, count, price, menuItemId }) => {
-  const transformation = ['w_128', 'h_128', 'c_fill'];
+  const transformation = ['w_140', 'h_140', 'c_fill'];
 
   const imageCld = useCloudinaryImage(image, transformation);
 
@@ -28,8 +28,8 @@ export const CartItem: FC<CartItemProps> = ({ image, title, count, price, menuIt
 
   return (
     <div className="border-t border-gray-200 pt-6">
-      <div className="flex gap-6 flex-col sm:flex-row">
-        <AdvancedImage cldImg={imageCld} width={128} height={128} className="rounded-md" />
+      <div className="flex gap-6 sm:flex-row">
+        <AdvancedImage cldImg={imageCld} width={140} height={140} className="rounded-md" />
         <div className="flex w-full flex-col justify-between">
           <div className="flex flex-col gap-2">
             <span className="font-semibold text-gray-900">{title}</span>
@@ -37,7 +37,7 @@ export const CartItem: FC<CartItemProps> = ({ image, title, count, price, menuIt
               Ціна: {count} x {price} грн = {count * price} грн
             </span>
           </div>
-          <div className="flex items-end justify-between gap-6">
+          <div className="flex flex-wrap items-end justify-between gap-6">
             <div className="w-24">
               <InputNumber
                 label="Кількість"

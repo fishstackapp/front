@@ -16,11 +16,11 @@ export const ActionPaper: FC<PropsWithChildren<ActionPaperProps>> = ({
   disableBottomPadding = false,
 }) => {
   const bodyClasses = clsx({
-    'px-6': !disableBodyPadding,
+    'px-2': !disableBodyPadding,
   });
 
   const wrapperClasses = clsx({
-    'pb-6': !disableBottomPadding,
+    'pb-2': !disableBottomPadding,
   });
 
   return (
