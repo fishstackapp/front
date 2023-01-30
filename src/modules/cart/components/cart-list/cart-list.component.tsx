@@ -30,7 +30,7 @@ export const CartList: FC<CartListProps> = ({
       return acc + el.price * cartItems[el.id];
     }, 0) ?? 0;
 
-  const wrapperClasses = clsx('flex flex-col gap-6', {
+  const wrapperClasses = clsx('flex flex-col gap-6 w-full', {
     'h-[calc(100%_-_3.25rem)]': !scrollDisabled,
   });
 
