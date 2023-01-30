@@ -60,8 +60,8 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
           <Input
             {...field}
             fullWidth
-            label="Адреса"
-            placeholder="Ваша адреса «Нова пошта»"
+            label="Адреса пошти"
+            placeholder="Дніпро, 23"
             error={fieldState.error?.message}
           />
         )}

@@ -2,18 +2,24 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { Payment_Types_Enum } from '@app/core/types';
-import { phoneRegexp } from '@app/common/utils/regex';
+import { phoneRegexp, addressRegexp, nameRegexp } from '@app/common/utils/regex';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { CheckoutFormValues, useCheckoutFormOptions } from './checkout-form.types';
 
 export const validation = yup.object({
-  name: yup.string().required("Поле обов'язкове!"),
+  name: yup
+    .string()
+    .required("Поле обов'язкове!")
+    .matches(nameRegexp, "Введіть коректне им`я. Приклад: Володимир"),
   phoneNumber: yup
     .string()
     .trim()
-    .matches(phoneRegexp, 'Введіть коректний номер телефону')
-    .required('Введіть номер телефону'),
-  address: yup.string().required("Поле обов'язкове!"),
+    .required("Поле обов'язкове!")
+    .matches(phoneRegexp, 'Введіть коректний номер телефону. Приклад: +380681234567'),
+  address: yup
+    .string()
+    .required("Поле обов'язкове!")
+    .matches(addressRegexp, 'Введіть коректну адресу. Приклад: Дніпро, 23'),
   comment: yup.string().notRequired(),
   paymentType: yup
     .string()
