@@ -2,6 +2,7 @@ import { validateApolloResponse } from '@app/common/utils/validate-apollo-respon
 import { useCustomerLoginLazyQuery, useCustomerVerifyCodeLazyQuery } from '@app/core/types';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { LoginForm } from '../components/login-form/login-form.component';
 import { useAuthState } from '../hooks/use-auth-state';
 
@@ -33,7 +34,7 @@ export const LoginPage = () => {
       login(queryResult.data.customerVerifyCode?.accessToken);
 
       navigate('/');
-
+      toast.success('Вітаємо у FishStack 😃', {autoClose: 2000});
     }
   };
 
