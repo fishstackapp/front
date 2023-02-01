@@ -21,7 +21,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
     reset({
       name: initialValues?.name ?? '',
       address: initialValues?.address ?? '',
-      phoneNumber: initialValues?.phone ?? '',
+      phoneNumber: initialValues?.phone ?? '+380',
     });
   }, [initialValues]);
 
@@ -49,6 +49,7 @@ export const CheckoutForm: FC<CheckoutFormProps> = ({submitCallback, initialValu
             fullWidth
             label="Телефон"
             placeholder="Ваш телефон +380..."
+            type="tel"
             error={fieldState.error?.message}
           />
         )}

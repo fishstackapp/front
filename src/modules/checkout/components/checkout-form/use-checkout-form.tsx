@@ -15,8 +15,8 @@ export const validation = yup.object({
   phoneNumber: yup
     .string()
     .trim()
-    .required("Поле обов'язкове!")
-    .matches(phoneRegexp, 'Введіть коректний номер телефону. Приклад: +380681234567'),
+    .required('Ваш телефон +380...')
+    .matches(phoneRegexp, 'Введіть коректний номер телефону'),
   address: yup
     .string()
     .required("Поле обов'язкове!")
@@ -34,7 +34,7 @@ export const useCheckoutForm = (options?: useCheckoutFormOptions) => {
     resolver: yupResolver(validation),
     defaultValues: {
       name: '',
-      phoneNumber: '',
+      phoneNumber: '+380',
       address: '',
       comment: '',
       paymentType: Payment_Types_Enum.Card,
