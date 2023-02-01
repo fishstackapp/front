@@ -42,7 +42,7 @@ export const useLoginForm = (
   } = useForm<LoginFormValues>({
     resolver: yupResolver(generateValidationSchema(step)),
     defaultValues: {
-      phoneNumber: '',
+      phoneNumber: '+380',
       code: '',
     },
   });

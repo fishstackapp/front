@@ -34,7 +34,7 @@ export const UseUpdateInfoForm = (
   } = useForm<UpdateInfoFormValues>({
     resolver: yupResolver(validationSchema),
     defaultValues: {
-      phoneNumber: initialValues?.phone,
+      phoneNumber: initialValues?.phone || '+380',
       name: initialValues?.name || '',
       address: initialValues?.address || '',
     },
