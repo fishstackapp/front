@@ -21,7 +21,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
 
     const inputClasses = clsx(
       'border shadow-sm bg-white rounded-md pl-3 pr-8 py-2 text-sm placeholder-gray-400 mb-2 outline-none transition-all',
-      'disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed',
+      'disabled:bg-gray-50 disabled:text-gray-500 disabled:cursor-not-allowed focus:text-base',
       {
         'border-gray-300': !error,
         'border-red-300 text-red-900 focus:border-red-500': error,
