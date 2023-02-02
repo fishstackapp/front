@@ -8,6 +8,7 @@ import { HeaderCategoryLink } from '../header-link/header-link.component';
 import { toggleCart } from '@app/modules/cart/store/cart-opened-state';
 import { ReactComponent as ShoppingCartSolidIcon } from '@app/assets/icons/shopping-cart-solid.svg';
 import { ReactComponent as Bars3Icon } from '@app/assets/icons/bars-3.svg';
+import { ReactComponent as XIcon } from '@app/assets/icons/x-mark-solid.svg';
 import { useAuthState } from '@app/modules/auth/hooks/use-auth-state';
 import { MobileMenu } from '../mobile-menu/mobile-menu.component';
 import { Logo } from '../logo/logo.component';
@@ -68,7 +69,7 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
 
               {isMenuOpened || isCheckoutPage ? (
                 <button aria-label="Bars" className="ml-auto sm:hidden" onClick={togleMenuOpened}>
-                  <Bars3Icon />
+                  <XIcon width={20} height={20}/>
                 </button>
               ) : (
                 <button aria-label="Bars" className="ml-auto sm:hidden" onClick={togleMenuOpened}>
