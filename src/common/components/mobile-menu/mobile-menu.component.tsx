@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { useAuthState } from '@app/modules/auth/hooks/use-auth-state';
 import { toast } from 'react-toastify';
+import { Badge } from '@mui/material';
+import { useReactiveVar } from '@apollo/client';
+import { cartState } from '@app/modules/cart/store/cart-state';
 
 interface MobileMenuProps {
   isMenuOpened: boolean;
@@ -10,12 +13,13 @@ interface MobileMenuProps {
 }
 
 export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened }) => {
+  const cartItems = useReactiveVar(cartState);
   const { isLoggedin, logout } = useAuthState();
 
   const mobileMenuClasses = clsx(
     'text-lg text-center bg-white z-10 fixed w-full mt-12 h-full p-10 sm:hidden',
     {
-      'hidden': !isMenuOpened,
+      hidden: !isMenuOpened,
       'block overflow-hidden': isMenuOpened,
     }
   );
@@ -25,7 +29,7 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened 
   const handleLogout = () => {
     closeMenu();
     logout();
-    toast.success('Нам дуже прикро, що Ви покидаєте нас 😥', {autoClose: 2000});
+    toast.success('Нам дуже прикро, що Ви покидаєте нас 😥', { autoClose: 2000 });
   };
 
   return (
@@ -38,7 +42,9 @@ export const MobileMenu: FC<MobileMenuProps> = ({ isMenuOpened, setIsMenuOpened 
         </li>
         <li>
           <Link to="/checkout" className="block w-full border-b py-4" onClick={closeMenu}>
-            До кошика
+            <Badge badgeContent={Object.keys(cartItems).length} color="info">
+              До кошика
+            </Badge>
           </Link>
         </li>
         {isLoggedin ? (

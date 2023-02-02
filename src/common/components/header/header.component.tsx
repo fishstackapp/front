@@ -12,6 +12,9 @@ import { useAuthState } from '@app/modules/auth/hooks/use-auth-state';
 import { MobileMenu } from '../mobile-menu/mobile-menu.component';
 import { Logo } from '../logo/logo.component';
 import { ReactClock } from '../react-clock/react-clock.component';
+import { Badge } from '@mui/material';
+import { useReactiveVar } from '@apollo/client';
+import { cartState } from '@app/modules/cart/store/cart-state';
 
 interface HeaderProps {
   isLoading?: boolean;
@@ -19,15 +22,16 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
+  const cartItems = useReactiveVar(cartState);
   const { isLoggedin } = useAuthState();
 
   const location = useLocation();
   const isHomePage = location.pathname === '/';
   const isLoginPage = location.pathname === '/login';
   const isCheckoutPage = location.pathname === '/checkout';
-  
+
   const [isMenuOpened, setIsMenuOpened] = useState(false);
-  const togleMenuOpened = () => setIsMenuOpened(p => !p)
+  const togleMenuOpened = () => setIsMenuOpened(p => !p);
 
   return (
     <header>
@@ -55,26 +59,38 @@ export const Header: FC<HeaderProps> = ({ isLoading, categories }) => {
                   ))}
                 </div>
               )}
-              {!isHomePage && !isMenuOpened  &&(
+              {!isHomePage && !isMenuOpened && (
                 <div className="relative text-sm font-semibold after:absolute after:block after:h-px after:w-full after:content-[''] hover:after:bg-blue-400 sm:text-base">
                   <Link to="/">Головна</Link>
                 </div>
               )}
-              {isMenuOpened && <ReactClock/>}
-              <button aria-label="Bars" className="ml-auto sm:hidden" onClick={togleMenuOpened}>
-                <Bars3Icon />
-              </button>
+              {isMenuOpened && <ReactClock />}
+
+              {isMenuOpened || isCheckoutPage ? (
+                <button aria-label="Bars" className="ml-auto sm:hidden" onClick={togleMenuOpened}>
+                  <Bars3Icon />
+                </button>
+              ) : (
+                <button aria-label="Bars" className="ml-auto sm:hidden" onClick={togleMenuOpened}>
+                  <Badge badgeContent={Object.keys(cartItems).length} color="info">
+                    <Bars3Icon />
+                  </Badge>
+                </button>
+              )}
             </>
           )}
         </div>
         <div className="hidden items-center gap-3 sm:flex">
           {!isCheckoutPage && (
             <button
+              className="relative"
               aria-label="Shopping cart"
               onClick={toggleCart}
               id="shopping-cart-item sm:hidden"
             >
-              <ShoppingCartSolidIcon className="h-6 w-6 child-path:fill-gray-900" />
+              <Badge badgeContent={Object.keys(cartItems).length} color="info">
+                <ShoppingCartSolidIcon className="h-6 w-6 child-path:fill-gray-900" />
+              </Badge>
             </button>
           )}
 
