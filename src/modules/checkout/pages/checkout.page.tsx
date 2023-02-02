@@ -10,6 +10,7 @@ import { useReactiveVar } from '@apollo/client';
 import { cartState, cleanCart } from '@app/modules/cart/store/cart-state';
 import { useCreateOrderMutation } from '@app/core/types';
 import { useGetMeDataQuery } from '@app/modules/auth/hooks/use-get-customer-data-query';
+import { toast } from 'react-toastify';
 
 interface CheckoutPageProps {}
 
@@ -20,6 +21,7 @@ export const CheckoutPage: FC<CheckoutPageProps> = () => {
   useEffect(() => {
     if (Object.keys(cart).length === 0) {
       navigate('/', { replace: true });
+      toast.warning('Ваш кошик порожній', {autoClose: 2000});
     }
   }, [cart]);
 
